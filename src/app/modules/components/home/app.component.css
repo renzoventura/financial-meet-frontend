@@ -1,0 +1,7 @@
+.current-sidebar {
+    display: grid;
+    height: 100%;
+}
+.current-sidebar .content {
+    padding: 30px 50px;
+}
