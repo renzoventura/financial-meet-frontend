@@ -1,7 +1,6 @@
-<div class="current-sidebar">
+<div class="split left">
   <app-sidebar *ngIf="showSideBar"></app-sidebar>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-
+</div>
+<div class="split right">
+  <router-outlet></router-outlet>
 </div>

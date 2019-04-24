@@ -25,15 +25,20 @@ export class UserGuard {
             this.isUser = true;
             break
           } default: {
+            this.router.navigate([this.loginUrl])
             this.isUser = false;
             break
           }
         }
+      },
+      err => {
+        console.log("Session finished")
+        console.log(err)
+        this.router.navigate([this.loginUrl])
+        this.isUser = false;
       }
     )
     return this.isUser;
   }
-
-
-
+  
 }

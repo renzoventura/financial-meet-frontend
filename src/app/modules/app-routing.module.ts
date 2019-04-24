@@ -9,8 +9,13 @@ import { UserGuard } from '../core/guards/user.guard';
 import { InternalGuard } from '../core/guards/internal.guard';
 import { AgentGuard } from '../core/guards/agent.guard';
 import { CreateApplicationComponent } from './components/user/create-application/create-application.component';
+import { AppComponent } from './components/home/app.component';
 
 const routes: Routes = [
+  { path: '',
+    redirectTo: 'login',
+    pathMatch: 'full' 
+  },
   {
     path: 'login',
     component: LoginComponent

@@ -1,0 +1,11 @@
+<h1 style="text-align:center;padding: 20px">Create Application</h1>
+
+<div class="card text-center odd">
+  <div class="card-body ">
+    <input [(ngModel)]="newApplication.title" type="text" class="form-control odd" placeholder="Application Title">
+    <textarea [(ngModel)]="newApplication.description" type="text" class="form-control odd mt-2" style="resize: none;"
+      placeholder="Write application details"></textarea>
+    <br>
+    <button (click)="createApplication()" class="btn btn-primary"> Create application! </button>
+  </div>
+</div>

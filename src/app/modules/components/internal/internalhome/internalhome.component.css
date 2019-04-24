@@ -1,0 +1,18 @@
+.applicationAgentSplit {
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.applicationSide {
+    left: 0;
+    width: 50%;
+}
+
+.agentSide {
+    right: 0;
+    width: 50%;
+}

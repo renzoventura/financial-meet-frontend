@@ -16,6 +16,8 @@ export class SidebarComponent implements OnInit {
   isAgentSideBar = false;
   isInternalSideBar = false;
 
+  showSideBar = false;
+
   ngOnInit() {
     if (!!localStorage.getItem(this.authServer.TOKEN)) {
       this.loadSidebarBasedOnRole()
@@ -29,14 +31,17 @@ export class SidebarComponent implements OnInit {
        switch (res.roles[0]) {
          case this.authServer.ROLE_USER: {
            this.isUserSideBar = true;
+           this.showSideBar = true;
            break;
          }
          case this.authServer.ROLE_AGENT: {
           this.isAgentSideBar = true;
+          this.showSideBar = true;
           break;
         }
         case this.authServer.ROLE_INTERNAL: {
           this.isInternalSideBar = true;
+          this.showSideBar = true;
           break;
         }
        }

@@ -12,10 +12,20 @@ export class UserhomeComponent implements OnInit {
 
   userApplications = []
 
+  noApplications = false;
+
   ngOnInit() {
     this.applicationService.getCurrentUserApplication().subscribe(
       res => {
         this.userApplications = res
+        if (this.userApplications.length == 0) {
+          console.log("i am empty")
+          this.noApplications = true;
+        } else {
+          console.log("i am NOT empty")
+
+          this.noApplications = false;
+        }
       }
     )
   }

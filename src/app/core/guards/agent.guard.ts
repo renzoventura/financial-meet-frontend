@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class AgentGuard {
 
-  constructor(private authService : AuthService, private router : Router){}
+  constructor(private authService: AuthService, private router: Router) { }
 
   loginUrl = '/login';
   isAgent: boolean = false;
@@ -27,6 +27,12 @@ export class AgentGuard {
             break
           }
         }
+      },
+      err => {
+        console.log("Session finished")
+        console.log(err)
+        this.router.navigate([this.loginUrl])
+        this.isAgent = false;
       }
     )
     return this.isAgent;

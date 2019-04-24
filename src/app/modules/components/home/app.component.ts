@@ -10,17 +10,21 @@ import { Router, NavigationStart } from '@angular/router';
 export class AppComponent {
 
   showSideBar = true;
-  componentsWithoutSidebar = ["/login","/register"];
+  componentsWithoutSidebar = ["/login", "/register"];
   title = 'Fynco';
 
 
-  constructor(private router:Router) {
+  ngOnInit() {
+  }
+
+  constructor(private router: Router) {
     router.events.forEach((event) => {
-      if(event instanceof NavigationStart) {
-          this.showSideBar = !this.componentsWithoutSidebar.includes(event.url);
+      if (event instanceof NavigationStart) {
+        this.showSideBar = !this.componentsWithoutSidebar.includes(event.url);
       }
     });
+
   }
-  
+
 }
 

@@ -25,6 +25,10 @@ export class AuthService {
   GET_ROLE_URL = this.SERVER_URL + "/checkrole"
   GET_ROLE_DETAILS = this.SERVER_URL + "/me"
 
+  GET_USERS_URL = this.SERVER_URL + "/users"
+  GET_AGENT_URL = this.SERVER_URL + "/agents"
+  GET_INTERNAL_URL = this.SERVER_URL + "/internals"
+
 
   ROLE_USER = "ROLE_USER"
   ROLE_AGENT = "ROLE_AGENT"
@@ -60,7 +64,18 @@ export class AuthService {
 
   getUserNameAndRole() {
     return this.http.get<any>(this.GET_ROLE_DETAILS)
+  }
 
+  getAllUsers() {
+    return this.http.get<any>(this.GET_USERS_URL)
   }
   
+  getAllAgents() {
+    return this.http.get<any>(this.GET_AGENT_URL)
+  }
+
+  getAllInternals() {
+    return this.http.get<any>(this.GET_INTERNAL_URL)
+  }
+
 }

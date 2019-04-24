@@ -1,0 +1,31 @@
+<h1 style="text-align:center;padding: 20px">Your Applications</h1>
+
+<div class="row mt-3">
+    <div class="col-md-12 mb-3" *ngFor="let application of userApplications; 
+    odd as isOdd; 
+    even as isEven">
+        <div class="card" [class.even]="isEven" [class.odd]="isOdd">
+            <div class="card-body">
+                <h3 class="card-text">#{{application.id}} {{application.title}}</h3>
+                <p class="card-text">{{application.description}}</p>
+            </div>
+            <div class="card-footer">
+                <p class="card-text text-primary">Owner: {{application.owner.username}}</p>
+                <p class="card-text text-primary" *ngIf="application.agent">Agent: {{application.agent.username}}</p>
+                <p class="card-text" *ngIf="!application.agent">No Agent Assigned</p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div *ngIf="noApplications" class="emptyApplications card-body">
+        <h1>
+            No applications found, please wait until you receive one.
+        </h1>
+        <h4>
+            In the meanwhile, please continue finishing your profile!
+        </h4>
+    </div>
+</div>
