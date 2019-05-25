@@ -4,6 +4,7 @@ import { UserhomeComponent } from '../user/components/userhome/userhome.componen
 import { CreateApplicationComponent } from '../user/components/create-application/create-application.component';
 import { UserGuard } from '../../core/guards/user.guard';
 import { UserComponent } from './components/user/user.component';
+import { ViewApplicationsComponent } from './components/view-applications/view-applications.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
             component: UserhomeComponent,
             canActivate: [UserGuard]
         }, 
+        {
+          path: 'applications',
+          component: ViewApplicationsComponent,
+          canActivate: [UserGuard]
+        },  
         {
           path: 'create',
           component: CreateApplicationComponent,

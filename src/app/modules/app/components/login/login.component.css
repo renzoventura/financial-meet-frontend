@@ -1,0 +1,110 @@
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url("src\assets\images\login-background.jpg");
+}
+
+.logo-wrapper {
+  margin-bottom: 5%;
+}
+
+.logo {
+  padding: 5px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.logo-footer {
+  font-family: Ubuntu;
+  text-align: center
+}
+
+.login-box {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border-radius: 2%;
+  margin: auto;
+  margin-top: 10%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title, mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.sign-in {
+  margin-top: 10px;
+  font-family: Ubuntu;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-radius: 100px;
+  background-color: #d2ac2d;
+}
+
+.sign-in-footer {
+  margin-top: 5px;
+  font-family: Ubuntu;
+  text-align: center;
+  border-radius: 100px;
+  width: 100%;
+  color: gray;
+}
+
+.sign-up-wrapper {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.sign-up-footer {
+  font-family: Ubuntu;
+  text-align: center;
+  width: 100%;
+  color: gray;
+}
+
+.sign-up {
+  font-family: Ubuntu;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-radius: 100px;
+  background-color: black;
+}
+
+.card-footer {
+  font-family: Ubuntu;
+  text-align: center;
+  width: 100%;
+  color: gray;
+  border-radius: 100px;
+}
+
+mat-form-field {
+  font-family: Ubuntu;
+}
+
+button:focus {
+  outline: 0;
+}

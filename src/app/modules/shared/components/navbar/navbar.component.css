@@ -1,0 +1,45 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: black;
+}
+
+.sidenav a {
+  color: white;
+  font-family: ubuntu;
+}
+
+.sidenav mat-toolbar {
+  color: white;
+  font-family: ubuntu;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.nav-logo {
+  padding-left: 10px;
+  height: 35px;
+  width: 95px;
+}
+
+.slogan {
+  font-family: ubuntu;
+  font-size: 15px;
+}
+
+.flex-box {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 0;
+}

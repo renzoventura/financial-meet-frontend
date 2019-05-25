@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <div *ngIf="isUserSideBar">
+      <mat-toolbar>User</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="./" routerLinkActive="active">Home</a>
+        <a mat-list-item routerLink="applications" routerLinkActive="active">My Applications</a>
+        <a mat-list-item routerLink="create" routerLinkActive="active">Create Application</a>
+      </mat-nav-list>
+    </div>
+    <div *ngIf="isAgentSideBar">
+      <mat-toolbar>Agent</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="./" routerLinkActive="active">Home</a>
+      </mat-nav-list>
+    </div>
+    <div *ngIf="isInternalSideBar">
+      <mat-toolbar>Internal</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="./" routerLinkActive="active">Home</a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="white">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img class="nav-logo" src="../../../../../assets/images/Fynco_logo.png">
+
+      <span class="flex-box"></span>
+      <span class="slogan" *ngIf="!(isHandset$ | async)">Connecting you with High Quality Advisors</span>
+
+      <span class="flex-box"></span>
+      <span>User info</span>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

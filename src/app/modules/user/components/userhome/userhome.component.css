@@ -1,3 +1,82 @@
-.emptyApplications {
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: goldenrod;
+    font-family: Ubuntu;
+}
+
+.welcome-message {
+    text-align:center;
+    padding-top: 45px;
+    font-size: 420%;
+}
+
+.welcome-message-footer {
+    text-align:center;
+    font-family: Ubuntu;
+    font-size: 220%;
+    color: white;
+}
+
+.button-wrapper {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    font-family: Ubuntu;
     text-align: center;
 }
+
+.important-button  {
+    font-family: Ubuntu;
+    width: 15%;
+    min-width: 160px;
+    border-radius: 100px;
+    background-color: white;
+    margin-right: 2.5%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.edit-profile-button {
+    font-family: Ubuntu;
+    width: 15%;
+    min-width: 160px;
+    border-radius: 100px;
+    background-color: black;
+    color: white;    
+    margin-left: 2.5%;
+    font-size: 15px;
+
+}
+
+.table-user-info{
+    background-color: white;
+    border-radius: 15px;
+    min-width:400px;
+    width:60%;
+}
+
+.user-info {
+    font-size: 20px;
+}
+
+.col {
+    padding: 15px;
+}
+
+.border-between > [class*='col']:before {
+    background: #e3e3e3;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    width: 1px;
+    top: 0;
+ }
+ 
+ .border-between > [class*='col']:first-child:before {
+    display: none;
+ }
+
+button:focus {outline:0;}
+

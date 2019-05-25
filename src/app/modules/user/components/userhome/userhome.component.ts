@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationService } from 'src/app/core/services/application/application.service';
+
 
 @Component({
   selector: 'app-userhome',
@@ -8,27 +8,13 @@ import { ApplicationService } from 'src/app/core/services/application/applicatio
 })
 export class UserhomeComponent implements OnInit {
 
-  constructor(private applicationService: ApplicationService) { }
+  constructor() { }
 
-  userApplications = []
-
-  noApplications = false;
+  userInfo: string = 'Test';
 
   ngOnInit() {
-    this.applicationService.getCurrentUserApplication().subscribe(
-      res => {
-        this.userApplications = res
-        if (this.userApplications.length == 0) {
-          console.log("i am empty")
-          this.noApplications = true;
-        } else {
-          console.log("i am NOT empty")
-
-          this.noApplications = false;
-        }
-      }
-    )
   }
 
+  
 
 }

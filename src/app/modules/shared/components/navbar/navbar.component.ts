@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
-  selector: 'shared-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class NavbarComponent {
 
-  constructor(private authServer: AuthService) {
-   }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
 
+  constructor(private breakpointObserver: BreakpointObserver,
+    private authServer: AuthService) {}
 
+  
   isUserSideBar = false;
   isAgentSideBar = false;
   isInternalSideBar = false;
@@ -22,7 +30,6 @@ export class SidebarComponent implements OnInit {
       this.loadSidebarBasedOnRole()
     }
   }
-  
 
   loadSidebarBasedOnRole() {
     console.log("asdasdasdasdsa");
@@ -45,5 +52,4 @@ export class SidebarComponent implements OnInit {
       }
     )
   }
-
 }
