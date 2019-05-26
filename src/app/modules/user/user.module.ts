@@ -4,11 +4,12 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserhomeComponent } from '../user/components/userhome/userhome.component';
 import { CreateApplicationComponent } from '../user/components/create-application/create-application.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
 import { SharedModule } from '../shared/shared.module';
 import { ViewApplicationsComponent } from '../user/components/view-applications/view-applications.component';
-import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,11 @@ import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule } fr
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class UserModule { }

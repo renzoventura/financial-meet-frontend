@@ -1,15 +1,7 @@
-html, body {
-    display: table;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: goldenrod;
-    font-family: Ubuntu;
-}
-
 .page {
-    position: relative;
+    margin: 0;
+    width: 100%;
+    font-family: Ubuntu;
 }
 
 .welcome-message {
@@ -58,7 +50,6 @@ html, body {
     border-radius: 15px;
     min-width: 400px;
     width: 60%;
-    margin-bottom: 10%;
 }
 
 .user-info {
