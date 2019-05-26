@@ -50,6 +50,7 @@
     border-radius: 15px;
     min-width: 400px;
     width: 60%;
+    margin-bottom:20px;
 }
 
 .user-info {
@@ -57,7 +58,8 @@
 }
 
 .col {
-    padding: 15px;
+    padding: 1%;
+    padding-left: 3%;
 }
 
 .border-between>[class*='col']:before {
