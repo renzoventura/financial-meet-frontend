@@ -30,7 +30,6 @@
   </div>
 </div> -->
 
-
 <mat-horizontal-stepper [linear]="isLinear" #stepper style="background-color: goldenrod">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
@@ -88,7 +87,6 @@
           </div>
         </div>
       </div>
-
       <div class="row button-wrapper">
         <div class="col">
         </div>
@@ -98,14 +96,9 @@
       </div>
     </form>
   </mat-step>
-
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Personal</ng-template>
-
-
-
-
       <div class="container application-wrapper">
         <div class="row question-wrapper">
           <div class="col">
@@ -168,7 +161,6 @@
             </mat-form-field>
           </div>
         </div>
-
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
@@ -180,9 +172,7 @@
           <div class="col">
           </div>
         </div>
-
         <div class="row question-wrapper">
-
           <div class="col">
             <mat-form-field>
               <textarea class="details-form" matInput placeholder="Enter details here"></textarea>
@@ -190,14 +180,7 @@
             </mat-form-field>
           </div>
         </div>
-
-
       </div>
-
-
-
-
-
       <div class="row button-wrapper">
         <div class="col">
           <button class="back-button" mat-button matStepperPrevious>Back</button>
@@ -208,30 +191,19 @@
       </div>
     </form>
   </mat-step>
-
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     <div class="row question-wrapper">
-
       <div class="col">
         <div class="">
           <div class="finished-title">Application created!</div>
-          <div class="finished-title-footer">Please wait patiently and a service team will reach out to you in 1 to 3 days time</div>
+          <div class="finished-title-footer">Please wait patiently and a service team will reach out to you in 1 to 3
+            days time</div>
         </div>
       </div>
-
-      
       <div class="col">
-
-        </div>
-  
+      </div>
     </div>
-
-
-
-
-
-
     <div class="row button-wrapper">
       <div class="col">
       </div>
