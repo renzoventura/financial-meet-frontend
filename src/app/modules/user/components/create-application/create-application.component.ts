@@ -11,10 +11,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateApplicationComponent implements OnInit {
 
-  newApplication : object = {};
-  isLinear = true;
+  newApplication: object = {};
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+
+  applicationExtraDetails: object= {};
+
+  applicationTypes = ["Mortgage",
+    "Insurance", "banking", "Advisory", "Wealth Management", "Mutual Funds"]
+
+  moneyRanges = [
+    "$10,000-$50,000",
+    "$50,001-$100,000",
+    "$100,001-$200,000",
+    "$200,001-$500,000",
+    "$500,001-more"
+  ]
+
+  yesOrNo = ["Yes", "No"]
 
   constructor(private applicationService: ApplicationService,
     private router: Router, private _formBuilder: FormBuilder) { }
@@ -28,7 +43,7 @@ export class CreateApplicationComponent implements OnInit {
     });
   }
 
-  createApplication(){
+  createApplication() {
     this.applicationService.createApplication(this.newApplication).subscribe(
       res => {
         console.log("APPLICATION CREATED")

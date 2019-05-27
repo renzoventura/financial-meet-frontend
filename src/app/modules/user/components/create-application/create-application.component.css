@@ -3,3 +3,87 @@ html, body {
     height: 100%;
     background-color: aqua
 }
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.application-question {
+    font-family: Ubuntu;
+}
+
+.application-question {
+    font-size: 150%;
+    font-family: Ubuntu;
+    color: white;
+}
+
+.application-question-details {
+    font-size: 80%;
+    font-family: Ubuntu;
+}
+
+
+.next-button {
+    margin-top: 10px;
+    font-family: Ubuntu;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: goldenrod;
+    width: 50%;
+    border-radius: 100px;
+    background-color: white;
+}
+
+.back-button {
+    margin-top: 10px;
+    font-family: Ubuntu;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    width: 50%;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.button-wrapper {
+    margin-top: 20px;
+}
+
+.question-wrapper {
+    margin-top: 5%;
+}
+
+.application-wrapper {
+    margin-bottom: 5%;
+}
+
+.details-form {
+    resize: vertical;
+
+}
+
+mat-form-field {
+    width: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+}
+
+button:focus {
+    outline: 0;
+  }
+
+.finished-title {
+    font-size: 250%;
+    font-family: Ubuntu;
+    color: white;
+
+}
+
+.finished-title-footer {
+    font-size: 100%;
+    font-family: Ubuntu;
+    color: white;
+}
