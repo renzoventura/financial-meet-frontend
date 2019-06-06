@@ -61,8 +61,6 @@ html, body {
 }
 
 .details-form {
-    resize: vertical;
-
 }
 
 mat-form-field {
