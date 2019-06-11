@@ -10,15 +10,14 @@ import { SharedModule } from '../shared/shared.module';
 import { ViewApplicationsComponent } from '../user/components/view-applications/view-applications.component';
 import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
-import { ApplicationTableComponent } from './components/application-table/application-table.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     UserhomeComponent,
     CreateApplicationComponent,
     UserComponent,
-    ViewApplicationsComponent,
-    ApplicationTableComponent
+    ViewApplicationsComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +37,7 @@ import { ApplicationTableComponent } from './components/application-table/applic
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    NgxPaginationModule
   ]
 })
 export class UserModule { }

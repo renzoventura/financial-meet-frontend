@@ -9,50 +9,50 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ViewApplicationsComponent implements OnInit {
 
-  constructor(private applicationService: ApplicationService) { }
 
-  userApplicationPage;
-  userApplications: [];
-  subscription: Subscription;
+
   noApplications = false;
   title: String = "";
   page: String = "1";
-  size: String = "10";
+  size: String = "5";
   displayedColumns = ['Row 1', 'Row 2'];
-  //displayedColumns = {'studentID': 'ID', 'fname': 'First Name', 'lname': 'Last Name', 'weight': 'Weight', 'symbol': 'Code'};
+
+  config: any;
+  userApplications: [];
 
   ngOnInit() {
-    // this.applicationService.getCurrentUserApplicationWithParams(
-    //   this.title, this.page, this.size
-    // ).subscribe(
-    //   res => {
-    //     this.userApplicationPage = res;
-    //     this.userApplications = res.content;
-    //     console.log(this.userApplicationPage)
-    //     console.log(this.userApplications)
-    //   }
-    // )
-
-    // this.subscription = this.applicationService.getCurrentUserApplication().subscribe(
-    //   res => {
-    //     console.log(res)
-    //     // this.userApplications = JSON.parse(res)['content'];
-    //     // console.log("res:", JSON.parse(res)['content']);
-    //     // if (this.userApplications.length == 0) { 
-    //     //   console.log("i am empty")
-    //     //   this.noApplications = true;
-    //     // } else {
-    //     //   console.log("i am NOT empty")
-    //     //   this.noApplications = false;
-    //     // }
-    //   }
-    // )
-
 
   }
 
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
+  constructor(private applicationService: ApplicationService) {
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+    };
+
+    this.applicationService.getCurrentUserApplicationWithParams(
+      this.title, this.page, this.size
+    ).subscribe(
+      res => {
+        this.userApplications = res.content
+        this.config.totalItems = res.totalElements - (res.numberOfElements)
+      }
+    )
+
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
+
+    this.applicationService.getCurrentUserApplicationWithParams(
+      this.title, event, this.size
+    ).subscribe(
+      res => {
+        this.userApplications = res.content
+        this.config.totalItems = res.totalElements - (res.numberOfElements)
+      }
+    )
+  }
+
 
 }

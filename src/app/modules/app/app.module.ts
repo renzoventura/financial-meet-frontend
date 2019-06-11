@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
     ],
   providers: [AuthService,UserGuard, AgentGuard, InternalGuard, 
     {
