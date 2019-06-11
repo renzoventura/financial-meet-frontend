@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ViewApplicationsComponent } from '../user/components/view-applications/view-applications.component';
 import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
+import { ApplicationTableComponent } from './components/application-table/application-table.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     CreateApplicationComponent,
     UserComponent,
     ViewApplicationsComponent,
+    ApplicationTableComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,10 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ]
 })
 export class UserModule { }

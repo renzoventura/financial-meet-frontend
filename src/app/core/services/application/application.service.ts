@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +11,29 @@ export class ApplicationService {
   SERVER_APPLICATION_URL = 'http://localhost:8080/application'
 
   GET_CURRENT_URL = this.SERVER_APPLICATION_URL + "/current"
-  
+
+  GET_CURRENT_URL_WITH_PARAMS = this.SERVER_APPLICATION_URL + "/current/summary"
+
   CREATE_APPLICATION__URL = this.SERVER_APPLICATION_URL + "/create"
 
-  getCurrentUserApplication(){
+  getCurrentUserApplication() {
     return this.http.get<any>(this.GET_CURRENT_URL);
   }
 
-  getCurrentAgentApplication(){
-    return this.http.get<any>(this.GET_CURRENT_URL + "/agent");
+  getCurrentUserApplicationWithParams(title, page, size) {
+    let params = new HttpParams();
+    params = params.append('title', title);
+    params = params.append('page', page);
+    params = params.append('size', size);
+    
+    return this.http.get<any>(this.GET_CURRENT_URL_WITH_PARAMS,
+      { params: params }
+    )
+    //.map((res:Response) => <Object[]>res.json());;
+  }
+
+  getCurrentAgentApplication() {
+    return this.http.get<Object[]>(this.GET_CURRENT_URL + "/agent");
   }
 
   createApplication(application) {
@@ -27,7 +41,7 @@ export class ApplicationService {
   }
 
   getAllApplications() {
-    return this.http.get<any>(this.SERVER_APPLICATION_URL)
+    return this.http.get<Object[]>(this.SERVER_APPLICATION_URL)
   }
 
   assignAgentToApplication(application, applicationId, agentId) {
@@ -36,7 +50,7 @@ export class ApplicationService {
   }
 
   removeAgentFromApplication(currentApplicationId) {
-    var REMOVE_AGENT_URL = this.SERVER_APPLICATION_URL + "/" + currentApplicationId +"/remove/agent"
+    var REMOVE_AGENT_URL = this.SERVER_APPLICATION_URL + "/" + currentApplicationId + "/remove/agent"
     return this.http.get<any>(REMOVE_AGENT_URL)
   }
 
