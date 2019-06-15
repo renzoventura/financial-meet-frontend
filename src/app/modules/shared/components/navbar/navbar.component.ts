@@ -32,7 +32,6 @@ export class NavbarComponent {
   }
 
   loadSidebarBasedOnRole() {
-    console.log("asdasdasdasdsa");
     this.authServer.getUserNameAndRole().subscribe(
       res => {
        switch (res.roles[0]) {

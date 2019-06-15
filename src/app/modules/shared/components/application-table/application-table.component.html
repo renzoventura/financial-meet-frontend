@@ -1,0 +1,59 @@
+<div class="data-table-page">
+
+    <div class="search-bar">
+        <form>
+            <mat-form-field>
+                <input class="search=title" type="text" [(ngModel)]="title" name="title" matInput placeholder="Title"
+                    spellcheck="false">
+            </mat-form-field>
+
+            <i (click)="getApplication(null)" class="material-icons">
+                search
+                <button (click)="getApplication(null)" style="display: none"> </button>
+            </i>
+        </form>
+    </div>
+    <div>
+
+        <div class="pagination-container">
+            <pagination-controls class="pagination" (pageChange)="getApplication($event)"></pagination-controls>
+        </div>
+
+        <div *ngFor="let application of userApplications | paginate: config;">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm">
+                            #{{application.id}} {{application.title}}
+                        </div>
+                        <div class="col-sm">
+                            Date Created:
+
+                            {{application.dateCreated}}
+                        </div>
+                        <div class="col-sm application-status">
+                            Status:
+                            <p class="application-status-value"> {{application.status}} </p>
+
+                        </div>
+                    </div>
+<!-- 
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-sm">
+                                {{application.description}}
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="card-footer">
+                    <p class="card-text text-primary" *ngIf="application.agent">Agent: {{application.agent.username}}
+                    </p>
+                    <p class="card-text" *ngIf="!application.agent">No Agent Assigned</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
