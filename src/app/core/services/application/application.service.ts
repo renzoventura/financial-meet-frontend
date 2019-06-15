@@ -10,38 +10,51 @@ export class ApplicationService {
 
   SERVER_APPLICATION_URL = 'http://localhost:8080/application'
 
-  GET_CURRENT_URL = this.SERVER_APPLICATION_URL + "/current"
 
-  GET_CURRENT_URL_WITH_PARAMS = this.SERVER_APPLICATION_URL + "/current/summary"
+  GET_APPLICATION_BY_USER = this.SERVER_APPLICATION_URL + "/u/current/"
+  GET_APPLICATION_BY_AGENT = this.SERVER_APPLICATION_URL + "/a/current"
+  GET_ALL_APPLICATION = this.SERVER_APPLICATION_URL + "/i/all"
+
 
   CREATE_APPLICATION__URL = this.SERVER_APPLICATION_URL + "/create"
 
-  getCurrentUserApplication() {
-    return this.http.get<any>(this.GET_CURRENT_URL);
-  }
-
-  getCurrentUserApplicationWithParams(title, page, size) {
+  getUserApplication(title, page, size) {
+    let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
-    params = params.append('page', page);
+    params = params.append('page', minusOnePage);
     params = params.append('size', size);
-    
-    return this.http.get<any>(this.GET_CURRENT_URL_WITH_PARAMS,
+    return this.http.get<any>(this.GET_APPLICATION_BY_USER,
       { params: params }
     )
-    //.map((res:Response) => <Object[]>res.json());;
   }
 
-  getCurrentAgentApplication() {
-    return this.http.get<Object[]>(this.GET_CURRENT_URL + "/agent");
+  getAgentApplication(title, page, size) {
+    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let params = new HttpParams();
+    params = params.append('title', title);
+    params = params.append('page', minusOnePage);
+    params = params.append('size', size);
+    return this.http.get<any>(this.GET_APPLICATION_BY_AGENT,
+      { params: params }
+    )
   }
 
   createApplication(application) {
     return this.http.post<any>(this.CREATE_APPLICATION__URL, application);
   }
 
-  getAllApplications() {
-    return this.http.get<Object[]>(this.SERVER_APPLICATION_URL)
+  getAllApplications(title, page, size) {
+    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let params = new HttpParams();
+    params = params.append('title', title);
+    params = params.append('page', minusOnePage);
+    params = params.append('size', size);
+    console.log("title,minusOnePage,size", title,minusOnePage,size)
+
+    return this.http.get<any>(this.GET_ALL_APPLICATION,
+      { params: params }
+    )
   }
 
   assignAgentToApplication(application, applicationId, agentId) {

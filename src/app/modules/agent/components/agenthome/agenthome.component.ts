@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationService } from 'src/app/core/services/application/application.service';
 
 @Component({
   selector: 'app-agenthome',
@@ -7,25 +6,11 @@ import { ApplicationService } from 'src/app/core/services/application/applicatio
   styleUrls: ['./agenthome.component.css']
 })
 export class AgenthomeComponent implements OnInit {
-  constructor(private applicationService: ApplicationService) { }
+  constructor() { }
 
   userApplications = []
+  ngOnInit() { }
 
-  noApplications = false;
+  userType = "AGENT"
 
-  ngOnInit() {
-    this.applicationService.getCurrentAgentApplication().subscribe(
-      res => {
-        this.userApplications = res
-        if (this.userApplications.length == 0) {
-          console.log("i am empty")
-          this.noApplications = true;
-        } else {
-          console.log("i am NOT empty")
-
-          this.noApplications = false;
-        }
-      }
-    )
-  }
 }

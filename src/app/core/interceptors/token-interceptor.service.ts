@@ -18,7 +18,7 @@ export class TokenInterceptorService implements HttpInterceptor {
 
     } else {
       //send edited request
-      console.log(req.url + " is not auth. " + "Intercepting...")
+      //console.log(req.url + " is not auth. " + "Intercepting...")
       let tokenizedReq = req.clone({
         setHeaders: {
           Authorization: `Bearer ${authService.getToken()}`

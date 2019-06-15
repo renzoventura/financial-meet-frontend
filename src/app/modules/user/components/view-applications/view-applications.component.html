@@ -1,16 +1,1 @@
-<div class="data-table" *ngFor="let application of userApplications | paginate: config;">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-text">#{{application.id}} {{application.title}}</h5>
-            <p class="card-text">{{application.description}}</p>
-        </div>
-        <div class="card-footer">
-            <p class="card-text text-primary" *ngIf="application.agent">Agent: {{application.agent.username}}</p>
-            <p class="card-text" *ngIf="!application.agent">No Agent Assigned</p>
-        </div>
-    </div>
-
-</div>
-<div class="container">
-    <pagination-controls class="paginator" (pageChange)="pageChanged($event)"></pagination-controls>
-</div>
+<app-application-table  [userType]='userType'></app-application-table>
