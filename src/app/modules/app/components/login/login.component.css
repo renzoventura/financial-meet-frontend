@@ -27,11 +27,13 @@
 .login-box {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
-  margin: auto;
-  margin-top: 5%;
-  margin-left: 35%;
-  margin-right: 35%;
+  display: block;
+  margin:auto;
+  margin-top: 10%;
+  min-width: 400px;
+  max-width: 500px;
 }
+
 
 .mat-form-field {
   width: 100%;
@@ -109,3 +111,4 @@ mat-form-field {
 button:focus {
   outline: 0;
 }
+
