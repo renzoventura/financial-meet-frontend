@@ -25,7 +25,6 @@ export class NavbarComponent {
   isInternalSideBar = false;
 
   ngOnInit() {
-    console.log("LOADING SIDE BAR");
     if (!!localStorage.getItem(this.authServer.TOKEN)) {
       this.loadSidebarBasedOnRole()
     }
