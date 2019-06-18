@@ -8,7 +8,7 @@ export class ApplicationService {
 
   constructor(private http: HttpClient) { }
 
-  SERVER_APPLICATION_URL = 'http://localhost:8080/application'
+  SERVER_APPLICATION_URL = 'ec2-52-64-154-235.ap-southeast-2.compute.amazonaws.com:8080/application'
 
 
   GET_APPLICATION_BY_USER = this.SERVER_APPLICATION_URL + "/u/current/"
