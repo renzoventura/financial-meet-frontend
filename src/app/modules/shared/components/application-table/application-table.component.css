@@ -32,13 +32,34 @@
     font-weight: bold;
 }
 
+form {
+
+}
+
 mat-form-field {
     width: 50%;
     font-family: Ubuntu;
     font-size: 120%;
 }
 
+mat-slide-toggle {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+    vertical-align: middle;
+    
 
+}
+
+.slider {
+    margin: auto;
+    width: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+    vertical-align: middle;
+}
 .application-status {
     display: inherit;
 }
@@ -51,4 +72,22 @@ mat-form-field {
 
 .card {
     margin-bottom: 10px;
+}
+
+.assign-button {
+    background-color: black;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.progress-button {
+    background-color: green;
+    color: white;
+    font-family: Ubuntu;
 }

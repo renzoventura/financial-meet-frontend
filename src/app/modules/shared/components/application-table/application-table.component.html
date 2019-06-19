@@ -2,15 +2,61 @@
 
     <div class="search-bar">
         <form>
-            <mat-form-field>
-                <input class="search=title" type="text" [(ngModel)]="title" name="title" matInput placeholder="Title"
-                    spellcheck="false">
-            </mat-form-field>
 
-            <i (click)="getApplication(null)" class="material-icons">
-                search
-                <button (click)="getApplication(null)" style="display: none"> </button>
-            </i>
+
+            <div class="row">
+                <div class="col-sm">
+                    <mat-form-field>
+                        <input class="search=title" type="text" [(ngModel)]="title" name="title" matInput
+                            placeholder="Title" spellcheck="false">
+                    </mat-form-field>
+
+                    <i (click)="getApplication(null)" class="material-icons">
+                        search
+                    </i>
+                </div>
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-application">
+                        <mat-label>Agent</mat-label>
+                        <mat-select [(ngModel)]="hasAgent" name="hasAgent"
+                        (change)="getApplication()">
+                            <mat-option [value]="true">
+                                Assigned
+                            </mat-option>
+                            <mat-option [value]="false">
+                                    Not Assigned
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+                        <mat-form-field class="mat-form-field-application">
+                            <mat-label>Order</mat-label>
+                            <mat-select [(ngModel)]="dateOrder" name="dateOrder">
+                                <mat-option [value]="asc">
+                                        Ascending 
+                                </mat-option>
+                                <mat-option [value]="des">
+                                        descending 
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <button (click)="getApplication(null)" style="display: none"> </button>
+
         </form>
     </div>
     <div>
@@ -19,25 +65,24 @@
             <pagination-controls class="pagination" (pageChange)="getApplication($event)"></pagination-controls>
         </div>
 
-        <div *ngFor="let application of userApplications | paginate: config;">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm">
-                            #{{application.id}} {{application.title}}
-                        </div>
-                        <div class="col-sm">
-                            Date Created:
-
-                            {{application.dateCreated}}
-                        </div>
-                        <div class="col-sm application-status">
-                            Status:
-                            <p class="application-status-value"> {{application.status}} </p>
-
-                        </div>
+        <div class="card application-layer" *ngFor="let application of userApplications | paginate: config;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm">
+                        #{{application.id}} {{application.title}}
                     </div>
-<!-- 
+                    <div class="col-sm">
+                        Date Created:
+
+                        {{application.dateCreated}}
+                    </div>
+                    <div class="col-sm application-status">
+                        Status:
+                        <p class="application-status-value"> {{application.status}} </p>
+
+                    </div>
+                </div>
+                <!--
                     <div class="card-text">
                         <div class="row">
                             <div class="col-sm">
@@ -45,13 +90,53 @@
                             </div>
                         </div>
                     </div> -->
-                </div>
-                <div class="card-footer">
-                    <p class="card-text text-primary" *ngIf="application.agent">Agent: {{application.agent.username}}
-                    </p>
-                    <p class="card-text" *ngIf="!application.agent">No Agent Assigned</p>
-                </div>
             </div>
+            <div class="card-footer">
+                <div *ngIf="application.agent">
+
+
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <p class="card-text text-primary">Agent assigned: {{application.agent.username}} </p>
+                        </div>
+
+                        <div class="col-sm text-right" *ngIf="isInternal">
+                            <button class="text-right" mat-raised-button class="remove-button"
+                                (click)="removeAgentFromApplication(application)">Remove Agent</button>
+                        </div>
+
+                        <div class="col-sm text-right" *ngIf="isAgent && !(application.status == 'DONE')">
+                            <button class="text-right" mat-raised-button class="progress-button"
+                                (click)="progressApplication(application)">Progress Application</button>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div *ngIf="!application.agent">
+
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <p class="card-text">No Agent Assigned</p>
+                        </div>
+                        <div class="col-sm text-right" *ngIf="isInternal">
+                            <button class="text-right" mat-raised-button class="assign-button"
+                                (click)="assignAgentToApplication(application)">Assign Agent</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>

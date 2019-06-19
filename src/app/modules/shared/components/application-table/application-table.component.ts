@@ -13,25 +13,39 @@ export class ApplicationTableComponent implements OnInit {
   noApplications = false;
   title: String = "";
   config: any;
-  
+
+  hasAgent: boolean;
+  dateOrder: string;
+
+  isUser: boolean = false;
+  isAgent: boolean = false;
+  isInternal: boolean = false;
+
+
   ngOnInit() {
     this.config = {
       itemsPerPage: 5,
       currentPage: 1,
     };
     this.getApplication(null);
-   }
+  }
 
-  constructor(private applicationService: ApplicationService) { }
+  constructor(private applicationService: ApplicationService) {
+
+  }
 
   getApplication(event) {
+    console.log(this.hasAgent);
     console.log("This is my userType", this.userType)
     switch (this.userType) {
       case "USER": this.getUserApplication(event);
+        this.isUser = true;
         break;
       case "AGENT": this.getAgentApplications(event);
+        this.isAgent = true;
         break;
       case "ALL": this.getAllApplications(event)
+        this.isInternal = true;
         break;
     }
   }
@@ -51,7 +65,6 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getAgentApplications(event) {
-    console.log("title", this.title)
     if (event != null) {
       this.config.currentPage = event
     }
@@ -66,7 +79,6 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getAllApplications(event) {
-    console.log("title", this.title)
     if (event != null) {
       this.config.currentPage = event
     }
@@ -80,5 +92,48 @@ export class ApplicationTableComponent implements OnInit {
     )
   }
 
+
+  removeAgentFromApplication(currentApplicationId) {
+    console.log(currentApplicationId.id)
+    this.applicationService.removeAgentFromApplication(currentApplicationId.id)
+      .subscribe(
+        res => {
+          console.log("updated!")
+          this.ngOnInit();
+        },
+        err => {
+          console.log(err)
+        }
+      )
+  }
+
+  assignAgentToApplication(currentApplication) {
+    console.log("asdasdasd")
+    let agentId = 10;
+    this.applicationService.assignAgentToApplication(currentApplication,
+      currentApplication.id, agentId).subscribe(
+        res => {
+          this.ngOnInit();
+        },
+        err => {
+          console.log("Assigning Agent Failed, Could not find Agent.")
+          console.log(err)
+
+        }
+      )
+  }
+
+  progressApplication(currentApplication) {
+    this.applicationService.progressApplication(currentApplication.id).subscribe(
+      res => {
+        this.ngOnInit();
+      },
+      err => {
+        console.log(err)
+        alert(err.error)
+
+      }
+    )
+  }
 
 }
