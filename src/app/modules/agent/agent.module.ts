@@ -7,12 +7,16 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { AgenthomeComponent } from './components/agenthome/agenthome.component';
+import { AgentViewProfileComponent } from './components/agent-view-profile/agent-view-profile.component';
+import { AgentViewApplicationsComponent } from './components/agent-view-applications/agent-view-applications.component';
 
 
 @NgModule({
   declarations: [
     AgentComponent, 
-    AgenthomeComponent
+    AgenthomeComponent, 
+    AgentViewProfileComponent, 
+    AgentViewApplicationsComponent
   ],
   imports: [
     CommonModule,

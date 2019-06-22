@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApplicationService } from 'src/app/core/services/application/application.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-application-table',
@@ -30,7 +31,8 @@ export class ApplicationTableComponent implements OnInit {
     this.getApplication(null);
   }
 
-  constructor(private applicationService: ApplicationService) {
+  constructor(private applicationService: ApplicationService,
+    private router: Router) {
 
   }
 

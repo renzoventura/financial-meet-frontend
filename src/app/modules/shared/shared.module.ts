@@ -10,12 +10,13 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { AgentProfileComponent } from './components/agent-profile/agent-profile.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    ApplicationTableComponent
+    ApplicationTableComponent,
+    AgentProfileComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +35,6 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatFormFieldModule,
     MatSlideToggleModule
   ],
-  exports: [NavbarComponent, ApplicationTableComponent]
+  exports: [NavbarComponent, ApplicationTableComponent, AgentProfileComponent]
 })
 export class SharedModule { }

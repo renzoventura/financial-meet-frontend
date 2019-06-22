@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
   selector: 'app-agenthome',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agenthome.component.css']
 })
 export class AgenthomeComponent implements OnInit {
-  constructor() { }
 
-  userApplications = []
-  ngOnInit() { }
+  agentId: number = 10;
 
-  userType = "AGENT"
+  constructor(private auth: AuthService) { }
+
+  ngOnInit() {
+  }
+
+  
 
 }

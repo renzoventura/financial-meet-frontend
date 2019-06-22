@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AgentComponent } from './components/agent/agent.component';
 import { AgenthomeComponent } from './components/agenthome/agenthome.component';
 import { AgentGuard } from 'src/app/core/guards/agent.guard';
+import { AgentViewProfileComponent } from './components/agent-view-profile/agent-view-profile.component';
+import { AgentViewApplicationsComponent } from './components/agent-view-applications/agent-view-applications.component';
 
 const routes: Routes = [
   {
@@ -13,7 +15,17 @@ const routes: Routes = [
           path: '',
           component: AgenthomeComponent,
           canActivate: [AgentGuard]
-      },  
+      }, 
+      {
+        path: 'applications',
+        component: AgentViewApplicationsComponent,
+        canActivate: [AgentGuard]
+      },
+      {
+        path: 'profile/:id',
+        component: AgentViewProfileComponent,
+        canActivate: [AgentGuard]
+      } 
     ]
 }
 ];

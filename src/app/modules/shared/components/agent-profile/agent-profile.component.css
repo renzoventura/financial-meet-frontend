@@ -1,0 +1,100 @@
+body {
+    font-family: ubuntu;
+}
+
+.cover-photo {
+    height: 25%;
+    background-image: url("src\assets\images\coverphoto.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.user-information {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.profile-photo {
+    margin-top: -130px;
+    display: block;
+    margin-left: 10%;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid goldenrod;
+    background-image: url("src\assets\images\profilephoto.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.agent-name {
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.agent-type {
+    font-size: 25px;
+    color: grey;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.fynco-verified {
+    font-size: 20px;
+    color: goldenrod;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.member-date {
+    font-size: 18px;
+    color: grey;
+    margin-top: 2%;
+}
+
+.stats {
+    padding-top: 10px;
+     padding-left: 20%; 
+}
+
+.stat-numbers {
+    margin-top: 15px;
+}
+
+.stat-numbers .header {
+    font-size: 15px;
+    color: grey;
+
+}
+
+.stat-numbers .number {
+    color: goldenrod;
+}
+
+
+.user-information-footer {
+    background-color: #F5F5F5;
+}
+
+
+
+.footer-header {
+    color: goldenrod;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.specialisation {
+    margin-top: 1%;
+    border-radius: 100px;
+    border: 3px solid goldenrod;
+    padding: 5px;
+    text-align: center;
+    overflow:hidden; white-space: nowrap;
+}

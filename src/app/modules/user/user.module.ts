@@ -11,13 +11,15 @@ import { ViewApplicationsComponent } from '../user/components/view-applications/
 import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { UserViewProfileComponent } from './components/user-view-profile/user-view-profile.component';
 
 @NgModule({
   declarations: [
     UserhomeComponent,
     CreateApplicationComponent,
     UserComponent,
-    ViewApplicationsComponent
+    ViewApplicationsComponent,
+    UserViewProfileComponent
   ],
   imports: [
     CommonModule,

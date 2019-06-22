@@ -1,0 +1,93 @@
+<body>
+    <div class="cover-photo"></div>
+
+    <div>
+        <div class="profile-photo"></div>
+        <div class="user-information row" style="margin-top: 2%; margin-bottom: 2%; justify-items: center;        ">
+            <div class="col-sm">
+                <div class="agent-name">AGENT NAME {{agentId}}</div>
+                <div class="agent-type">MORTGAGE AGENT</div>
+                <div class="fynco-verified">FYNCO VERIFIED</div>
+                <div class="member-date">Member Since DATE</div>
+                <div class="stat-numbers">
+                    <div class="header">Successful Deals</div>
+                    <div class="number">136</div>
+                    <div class="header">Average Turn Around</div>
+                    <div class="number">7 Weeks</div>
+                    <div class="header">Average Rating</div>
+                    <div class="number">{{agentId}}</div>
+                </div>
+            </div>
+            <div class="col-sm stats">
+                <div class="container">
+                    <div class="c100 p{{agentId}} big orange ">
+                        <span>{{agentId}}%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-information-footer" style="padding-top:2%; padding-bottom: 2%">
+        <div class="user-information">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="footer-header">ABOUT</div>
+                    <hr>
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="footer-header">SPECIALISATION</div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm" *ngFor="let specialisation of specialisations">
+                            <div class="specialisation">
+                                {{specialisation}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:2%;">
+                <div class="col-sm">
+                    <div class="footer-header">AWARDS</div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm" *ngFor="let award of awards">
+                            <div class="specialisation">
+                                {{award}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="footer-header">TESTIMONY</div>
+                    <hr>
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>

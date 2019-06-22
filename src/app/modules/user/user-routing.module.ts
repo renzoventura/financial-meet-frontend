@@ -5,6 +5,7 @@ import { CreateApplicationComponent } from '../user/components/create-applicatio
 import { UserGuard } from '../../core/guards/user.guard';
 import { UserComponent } from './components/user/user.component';
 import { ViewApplicationsComponent } from './components/view-applications/view-applications.component';
+import { UserViewProfileComponent } from './components/user-view-profile/user-view-profile.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,12 @@ const routes: Routes = [
           path: 'create',
           component: CreateApplicationComponent,
           canActivate: [UserGuard]
-        },    
+        },
+        {
+          path: 'profile/:id',
+          component: UserViewProfileComponent,
+          canActivate: [UserGuard]
+        }    
     ]
 }
 ];

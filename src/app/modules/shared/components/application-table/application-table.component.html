@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-sm">
                     <mat-form-field>
-                        <input class="search=title" type="text" [(ngModel)]="title" name="title" matInput
+                        <input type="text" [(ngModel)]="title" name="title" matInput
                             placeholder="Title" spellcheck="false">
                     </mat-form-field>
 
@@ -18,42 +18,31 @@
                 <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Agent</mat-label>
-                        <mat-select [(ngModel)]="hasAgent" name="hasAgent"
-                        (change)="getApplication()">
+                        <mat-select [(ngModel)]="hasAgent" name="hasAgent" (change)="getApplication()">
                             <mat-option [value]="true">
                                 Assigned
                             </mat-option>
                             <mat-option [value]="false">
-                                    Not Assigned
+                                Not Assigned
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="col-sm">
-                        <mat-form-field class="mat-form-field-application">
-                            <mat-label>Order</mat-label>
-                            <mat-select [(ngModel)]="dateOrder" name="dateOrder">
-                                <mat-option [value]="asc">
-                                        Ascending 
-                                </mat-option>
-                                <mat-option [value]="des">
-                                        descending 
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field class="mat-form-field-application">
+                        <mat-label>Order</mat-label>
+                        <mat-select [(ngModel)]="dateOrder" name="dateOrder">
+                            <mat-option [value]="asc">
+                                Ascending
+                            </mat-option>
+                            <mat-option [value]="des">
+                                descending
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
 
             <button (click)="getApplication(null)" style="display: none"> </button>
 
@@ -97,7 +86,7 @@
 
 
                     <div class="row">
-                        <div class="col-sm">
+                        <div class="col-sm" routerLinkActive="active" routerLink="../profile/{{application.agent.id}}">
                             <p class="card-text text-primary">Agent assigned: {{application.agent.username}} </p>
                         </div>
 
@@ -110,17 +99,10 @@
                             <button class="text-right" mat-raised-button class="progress-button"
                                 (click)="progressApplication(application)">Progress Application</button>
                         </div>
-
                     </div>
-
-
-
-
                 </div>
 
                 <div *ngIf="!application.agent">
-
-
                     <div class="row">
                         <div class="col-sm">
                             <p class="card-text">No Agent Assigned</p>
@@ -131,7 +113,6 @@
                         </div>
 
                     </div>
-
 
                 </div>
 
