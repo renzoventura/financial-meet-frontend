@@ -20,6 +20,7 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/mat
 import { MatCardModule } from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MatCardModule,
     MatInputModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSelectModule
     ],
   providers: [AuthService,UserGuard, AgentGuard, InternalGuard, 
     {

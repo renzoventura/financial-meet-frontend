@@ -1,3 +1,44 @@
-<p>
-  register works!
-</p>
+<div class="image">
+  <mat-card class="login-box">
+    <div class="logo-wrapper container">
+      <img class="logo" src="../../../../../assets/images/Fynco_logo.png">
+      <p class="logo-footer">Finding you High Quality Advisers</p>
+    </div>
+
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <mat-label>USER or AGENT?</mat-label>
+          <mat-select [(ngModel)]="userType" name="userType" matNativeControl required>
+            <mat-option value="USER">USER</mat-option>
+            <mat-option value="AGENT">AGENT</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>
+          <mat-form-field>
+            <input type="text" [(ngModel)]="registerUserData.username" name="email" matInput placeholder="Email"
+              spellcheck="false" required>
+          </mat-form-field>
+        </p>
+        <mat-form-field>
+          <input type="password" [(ngModel)]="registerUserData.password" name="password" matInput placeholder="Password"
+            required>
+        </mat-form-field>
+        <p>
+          <mat-form-field>
+            <input type="password" [(ngModel)]="confirmPassword" name="password" matInput placeholder="Confirm Password"
+              required>
+          </mat-form-field>
+        </p>
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <button type="submit" class="sign-in" (click)="register()" mat-button>REGISTER</button>
+        <div>
+          <a class="card-footer" mat-button>Back to Fynco Homepage</a>
+          <a class="card-footer" routerLinkActive="active" routerLink="../login" mat-button>Back to Login</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

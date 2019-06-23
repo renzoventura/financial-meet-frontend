@@ -18,11 +18,9 @@ export class LoginComponent implements OnInit {
   loginUserData = {}
 
   login() {
-    console.log(this.loginUserData);
     return this.authService.login(this.loginUserData).subscribe(
       res => {
         localStorage.setItem("token", res.token);
-        console.log(res.roles);
         switch (res.roles[0]) {
           case this.authService.ROLE_USER: {
             this.router.navigate(["/u"])
