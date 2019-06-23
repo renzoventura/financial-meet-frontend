@@ -31,15 +31,13 @@
                 <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Order</mat-label>
-                        <mat-select [(ngModel)]="dateOrder" name="dateOrder">
-                            <mat-option [value]="asc">
-                                Ascending
-                            </mat-option>
-                            <mat-option [value]="des">
-                                descending
-                            </mat-option>
+                        <mat-select [(ngModel)]="dateOrder" name="dateOrder" (selectionChange)="getApplication()">
+                            <mat-option *ngFor="let dateOrder of dateOrders" [value]="dateOrder">
+                                    {{ dateOrder }}
+                                  </mat-option>
                         </mat-select>
                     </mat-form-field>
+
                 </div>
 
             </div>

@@ -16,12 +16,13 @@ export class ApplicationTableComponent implements OnInit {
   config: any;
 
   hasAgent: boolean;
-  dateOrder: string;
+  dateOrder: string = "asc";
 
   isUser: boolean = false;
   isAgent: boolean = false;
   isInternal: boolean = false;
 
+  dateOrders = ["ASC", "DESC"]
 
   ngOnInit() {
     this.config = {
@@ -53,11 +54,12 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getUserApplication(event) {
+    console.log(this.dateOrder)
     if (event != null) {
       this.config.currentPage = event
     }
     this.applicationService.getUserApplication(
-      this.title, this.config.currentPage, this.config.itemsPerPage
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
     ).subscribe(
       res => {
         this.userApplications = res.content
@@ -71,7 +73,7 @@ export class ApplicationTableComponent implements OnInit {
       this.config.currentPage = event
     }
     this.applicationService.getAgentApplication(
-      this.title, this.config.currentPage, this.config.itemsPerPage
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
     ).subscribe(
       res => {
         this.userApplications = res.content
@@ -85,7 +87,7 @@ export class ApplicationTableComponent implements OnInit {
       this.config.currentPage = event
     }
     this.applicationService.getAllApplications(
-      this.title, this.config.currentPage, this.config.itemsPerPage
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
     ).subscribe(
       res => {
         this.userApplications = res.content

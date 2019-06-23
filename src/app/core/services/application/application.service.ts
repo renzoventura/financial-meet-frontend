@@ -18,23 +18,25 @@ export class ApplicationService {
 
   CREATE_APPLICATION__URL = this.SERVER_APPLICATION_URL + "/create"
 
-  getUserApplication(title, page, size) {
+  getUserApplication(title, page, size, order) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
+    params = params.append('order', order);
     return this.http.get<any>(this.GET_APPLICATION_BY_USER,
       { params: params }
     )
   }
 
-  getAgentApplication(title, page, size) {
+  getAgentApplication(title, page, size, order) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
+    params = params.append('order', order);
     return this.http.get<any>(this.GET_APPLICATION_BY_AGENT,
       { params: params }
     )
@@ -44,14 +46,13 @@ export class ApplicationService {
     return this.http.post<any>(this.CREATE_APPLICATION__URL, application);
   }
 
-  getAllApplications(title, page, size) {
+  getAllApplications(title, page, size, order) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
-    console.log("title,minusOnePage,size", title,minusOnePage,size)
-
+    params = params.append('order', order);
     return this.http.get<any>(this.GET_ALL_APPLICATION,
       { params: params }
     )
