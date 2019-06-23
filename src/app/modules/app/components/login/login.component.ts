@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             break;
           }
           case this.authService.ROLE_INTERNAL: {
-            this.router.navigate(["/i"])
+            this.router.navigate(["/i/applications"])
             break;
           }
           default: {

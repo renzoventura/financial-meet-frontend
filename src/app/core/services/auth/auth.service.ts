@@ -29,6 +29,7 @@ export class AuthService {
   GET_AGENT_URL = this.SERVER_URL + "/agents"
   GET_INTERNAL_URL = this.SERVER_URL + "/internals"
 
+  GET_AGENT = this.SERVER_URL + "/account"
 
   ROLE_USER = "ROLE_USER"
   ROLE_AGENT = "ROLE_AGENT"
@@ -76,6 +77,10 @@ export class AuthService {
 
   getAllInternals() {
     return this.http.get<any>(this.GET_INTERNAL_URL)
+  }
+
+  getAgentById(id) {
+    return this.http.get<any>(this.GET_AGENT + "/" + id)
   }
 
 }
