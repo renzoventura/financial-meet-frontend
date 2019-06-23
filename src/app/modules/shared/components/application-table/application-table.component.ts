@@ -111,9 +111,8 @@ export class ApplicationTableComponent implements OnInit {
       )
   }
 
-  assignAgentToApplication(currentApplication) {
+  assignAgentToApplication(currentApplication, agentId) {
     console.log("asdasdasd")
-    let agentId = 10;
     this.applicationService.assignAgentToApplication(currentApplication,
       currentApplication.id, agentId).subscribe(
         res => {

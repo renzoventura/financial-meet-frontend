@@ -7,15 +7,15 @@
             <div class="row">
                 <div class="col-sm">
                     <mat-form-field>
-                        <input type="text" [(ngModel)]="title" name="title" matInput
-                            placeholder="Title" spellcheck="false">
+                        <input type="text" [(ngModel)]="title" name="title" matInput placeholder="Title"
+                            spellcheck="false">
                     </mat-form-field>
 
                     <i (click)="getApplication(null)" class="material-icons">
                         search
                     </i>
                 </div>
-                <div class="col-sm">
+                <!-- <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Agent</mat-label>
                         <mat-select [(ngModel)]="hasAgent" name="hasAgent" (change)="getApplication()">
@@ -27,14 +27,14 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                </div>
+                </div> -->
                 <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Order</mat-label>
                         <mat-select [(ngModel)]="dateOrder" name="dateOrder" (selectionChange)="getApplication()">
                             <mat-option *ngFor="let dateOrder of dateOrders" [value]="dateOrder">
-                                    {{ dateOrder }}
-                                  </mat-option>
+                                {{ dateOrder }}
+                            </mat-option>
                         </mat-select>
                     </mat-form-field>
 
@@ -102,12 +102,14 @@
 
                 <div *ngIf="!application.agent">
                     <div class="row">
-                        <div class="col-sm">
-                            <p class="card-text">No Agent Assigned</p>
-                        </div>
-                        <div class="col-sm text-right" *ngIf="isInternal">
-                            <button class="text-right" mat-raised-button class="assign-button"
-                                (click)="assignAgentToApplication(application)">Assign Agent</button>
+
+                        <div class="col-sm" *ngIf="isInternal">
+                            <form>
+                                <input class="assign-agent-input" type="number" name="agentId" value="agentId"
+                                    placeholder="Agent Id" spellcheck="false" #agentId>
+                                <button class="text-right" mat-raised-button class="assign-button"
+                                    (click)="assignAgentToApplication(application, agentId.value)">Assign Agent</button>
+                            </form>
                         </div>
 
                     </div>

@@ -87,3 +87,9 @@ mat-slide-toggle {
     color: white;
     font-family: Ubuntu;
 }
+
+.assign-agent-input {
+    width: 100px;
+    margin-right: 5px;
+
+}
