@@ -15,11 +15,10 @@ export class AgentProfileComponent implements OnInit {
 
   specialisations = ["PERSONAL LOANS", "HOME LOANS", "FIRST TIME HOME OWNER", "REFINANCE"]
   awards = ["RCP Commercial Office Property Award", "Yardi Retail Property Award", "CBRE Industrial Property Award", "Rider Levett Bucknall Supreme Award"]
-  
-  constructor(private authService : AuthService) {}
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    console.log("agentId:" + this.agentId)
     this.authService.getAgentById(this.agentId).subscribe(
       res => {
         this.agent = res.body;

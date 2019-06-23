@@ -31,6 +31,8 @@ export class AuthService {
 
   GET_AGENT = this.SERVER_URL + "/account"
 
+  GET_CURRENT_ACOUNT = this.SERVER_URL + "/account/me"
+
   ROLE_USER = "ROLE_USER"
   ROLE_AGENT = "ROLE_AGENT"
   ROLE_INTERNAL = "ROLE_INTERNAL"
@@ -70,7 +72,7 @@ export class AuthService {
   getAllUsers() {
     return this.http.get<any>(this.GET_USERS_URL)
   }
-  
+
   getAllAgents() {
     return this.http.get<any>(this.GET_AGENT_URL)
   }
@@ -81,6 +83,10 @@ export class AuthService {
 
   getAgentById(id) {
     return this.http.get<any>(this.GET_AGENT + "/" + id)
+  }
+
+  getCurrentAccountDetails() {
+    return this.http.get<any>(this.GET_CURRENT_ACOUNT)
   }
 
 }

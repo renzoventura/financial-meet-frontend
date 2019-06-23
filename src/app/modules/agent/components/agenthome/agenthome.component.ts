@@ -8,13 +8,16 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class AgenthomeComponent implements OnInit {
 
-  agentId: number = 10;
+  agentId: number;
 
-  constructor(private auth: AuthService) { }
-
-  ngOnInit() {
+  constructor(private auth: AuthService) {
+    this.auth.getCurrentAccountDetails().subscribe(
+      res => {
+        this.agentId = res.body.id
+      }
+    )
   }
 
-  
+  ngOnInit() { }
 
 }

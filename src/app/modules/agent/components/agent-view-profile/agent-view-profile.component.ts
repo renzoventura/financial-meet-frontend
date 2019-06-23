@@ -14,7 +14,6 @@ export class AgentViewProfileComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe( params => this.agentId = params.id );
-
   }
 
 }
