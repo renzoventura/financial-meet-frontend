@@ -43,7 +43,7 @@ export class ApplicationService {
   }
 
   createApplication(application) {
-    return this.http.post<any>(this.CREATE_APPLICATION__URL, application);
+    return this.http.post<any>(this.CREATE_APPLICATION__URL + "/mortgage", application);
   }
 
   getAllApplications(title, page, size, order) {

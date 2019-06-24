@@ -139,7 +139,7 @@
           </div>
           <div class="col">
               <mat-form-field>
-                  <textarea class="details-form" matInput placeholder="Enter details here"></textarea>
+                  <textarea [(ngModel)]="newApplication.title" [ngModelOptions]="{standalone: true}" name="title" class="details-form" matInput placeholder="Enter details here"></textarea>
                   <mat-hint align="start"><strong>Enter relevant information only</strong> </mat-hint>
                 </mat-form-field>
           </div>
@@ -151,7 +151,7 @@
           <button class="back-button" mat-button matStepperPrevious>Back</button>
         </div>
         <div class="col">
-          <button class="next-button" mat-button matStepperNext>Next</button>
+          <button class="next-button" mat-button (click)="createApplication(stepper)" >Next</button>
         </div>
       </div>
     </form>
@@ -173,7 +173,9 @@
       <div class="col">
       </div>
       <div class="col">
-        <button class="back-button" mat-button (click)="stepper.reset()">Done</button>
+        <!-- <button class="back-button" mat-button (click)="stepper.reset()">Done</button> -->
+        <button class="back-button" mat-button  routerLinkActive="active" routerLink="../applications">Done</button>
+
       </div>
     </div>
   </mat-step>

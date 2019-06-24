@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApplicationService } from 'src/app/core/services/application/application.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material';
 
 @Component({
   selector: 'app-create-application',
@@ -30,6 +31,8 @@ export class CreateApplicationComponent implements OnInit {
 
   yesOrNo = ["Yes", "No"]
 
+
+
   constructor(private applicationService: ApplicationService,
     private router: Router, private _formBuilder: FormBuilder) { }
 
@@ -42,16 +45,21 @@ export class CreateApplicationComponent implements OnInit {
     });
   }
 
-  createApplication() {
+  createApplication(stepper: MatStepper) {
     this.applicationService.createApplication(this.newApplication).subscribe(
       res => {
         console.log("APPLICATION CREATED")
-        this.router.navigate(["/user"])
+        stepper.next();
       },
       err => {
         console.log("APPLICATION FAILED")
+        alert("Enter Details")
       }
     )
+  }
+
+  finish() {
+    this.router.navigate(["../applications"])
   }
 
 }
