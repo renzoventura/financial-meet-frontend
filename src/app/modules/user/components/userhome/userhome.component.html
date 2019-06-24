@@ -14,47 +14,47 @@
         <div class="row border-between">
             <div class="col">
                 <div>First Name: </div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.firstName || "EMPTY"}}</div>
             </div>
             <div class="col">
                 <div>Suburb:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.suburb || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div>Last Name:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.lastName || "EMPTY"}}</div>
             </div>
             <div class="col">
                 <div>Preferred Languages:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div>Phone:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.phoneNumber || "EMPTY"}}</div>
             </div>
             <div class="col">
                 <div>Email Address:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.email || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div>Mobile:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.mobile || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>MemberShip:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div>Current Loan</div>
+                <div class="user-info">{{currentAccount.currentLoan || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
                 <div>Occupation:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div class="user-info">{{currentAccount.occupation || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>Member Since:</div>
-                <div class="user-info">{{userInfo || "EMPTY"}}</div>
+                <div>Annual Income:</div>
+                <div class="user-info">{{currentAccount.annualIncome || "EMPTY"}}</div>
             </div>
         </div>
     </div>

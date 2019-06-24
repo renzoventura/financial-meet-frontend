@@ -20,6 +20,17 @@ export class RegisterComponent implements OnInit {
   error: String;
   userType: String;
 
+  suburbs = ["Albany", "Bayswater", "Bayview", "Beach Haven", "Belmont", "Birkdale", "Birkenhead", "Browns Bay", "Campbells Bay", "Castor Bay", "Chatswood", "Cheltenham", "Crown Hill", "Devonport", "Fairview Heights", "Forrest Hill", "Glenfield", "Greenhithe", "Hauraki", "Highbury", "Long Bay", "Mairangi Bay", "Pinehill", "Rosedale", "Rothesay Bay", "Sunnynook", "Takapuna", "Torbay", "Wairau Valley", "Westlake"];
+
+  moneyRanges = [
+    "$10,000-$50,000",
+    "$50,001-$100,000",
+    "$100,001-$200,000",
+    "$200,001-$500,000",
+    "$500,001-more"
+  ]
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {

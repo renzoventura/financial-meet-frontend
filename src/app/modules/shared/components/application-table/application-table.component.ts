@@ -119,8 +119,9 @@ export class ApplicationTableComponent implements OnInit {
           this.ngOnInit();
         },
         err => {
-          console.log("Assigning Agent Failed, Could not find Agent.")
+          alert("Assigning Agent Failed, Could not find Agent.")
           console.log(err)
+
 
         }
       )
