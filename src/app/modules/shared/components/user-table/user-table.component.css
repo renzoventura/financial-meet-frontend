@@ -1,0 +1,95 @@
+.emptyusers {
+    text-align: center;
+}
+
+.data-table-page {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Ubuntu;
+}
+
+.search-bar {
+    text-align: center;
+    margin: auto;
+}
+
+.pagination-container {
+    text-align: center;
+}
+
+.pagination {
+    margin: 0px 0px 0px -40px;
+    display: block;
+}
+
+.search-button {
+    font-family: Ubuntu;
+    width: 5%;
+    min-width: 80px;
+    border-radius: 100px;
+    background-color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+mat-form-field {
+    width: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+}
+
+mat-slide-toggle {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+    vertical-align: middle;
+    
+
+}
+
+.slider {
+    margin: auto;
+    width: 50%;
+    font-family: Ubuntu;
+    font-size: 120%;
+    vertical-align: middle;
+}
+.user-status {
+    display: inherit;
+}
+
+.user-status-value {
+    margin-left: 5px;
+    color: green;
+    font-weight: bold;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.assign-button {
+    background-color: black;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.progress-button {
+    background-color: green;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.assign-agent-input {
+    width: 100px;
+    margin-right: 5px;
+
+}

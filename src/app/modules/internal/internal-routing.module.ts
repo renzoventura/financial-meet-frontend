@@ -5,6 +5,7 @@ import { InternalhomeComponent } from './components/internalhome/internalhome.co
 import { InternalGuard } from 'src/app/core/guards/internal.guard';
 import { InternalViewApplicationsComponent } from './components/internal-view-applications/internal-view-applications.component';
 import { InternalViewProfileComponent } from './components/internal-view-profile/internal-view-profile.component';
+import { InternalViewUsersComponent } from './components/internal-view-users/internal-view-users.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
       {
         path: 'applications',
         component: InternalViewApplicationsComponent,
+        canActivate: [InternalGuard]
+      },
+      {
+        path: 'agents',
+        component: InternalViewUsersComponent,
         canActivate: [InternalGuard]
       }
     ]

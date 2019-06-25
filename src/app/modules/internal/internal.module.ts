@@ -9,13 +9,15 @@ import { InternalComponent } from './components/internal/internal.component';
 import { SharedModule } from '../shared/shared.module';
 import { InternalViewApplicationsComponent } from './components/internal-view-applications/internal-view-applications.component';
 import { InternalViewProfileComponent } from './components/internal-view-profile/internal-view-profile.component';
+import { InternalViewUsersComponent } from './components/internal-view-users/internal-view-users.component';
 
 @NgModule({
   declarations: [
     InternalhomeComponent,
     InternalComponent,
     InternalViewApplicationsComponent,
-    InternalViewProfileComponent
+    InternalViewProfileComponent,
+    InternalViewUsersComponent
   ],
   imports: [
     CommonModule,

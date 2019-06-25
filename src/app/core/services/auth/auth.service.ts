@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -73,8 +73,16 @@ export class AuthService {
     return this.http.get<any>(this.GET_USERS_URL)
   }
 
-  getAllAgents() {
-    return this.http.get<any>(this.GET_AGENT_URL)
+  getAllAgents(firstName, lastName, suburb, page, size,) {
+    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let params = new HttpParams();
+    params = params.append('firstName', firstName);
+    params = params.append('lastName', lastName);
+    params = params.append('suburb', suburb);
+    params = params.append('page', minusOnePage);
+    params = params.append('size', size);
+    return this.http.get<any>(this.GET_AGENT_URL,
+      { params: params })
   }
 
   getAllInternals() {

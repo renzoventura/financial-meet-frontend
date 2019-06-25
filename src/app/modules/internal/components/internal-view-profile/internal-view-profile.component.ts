@@ -13,6 +13,7 @@ export class InternalViewProfileComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log("asdasdasdasdasdasd")
     this.route.params.subscribe(params => this.agentId = params.id);
 
   }
