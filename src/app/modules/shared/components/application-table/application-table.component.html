@@ -69,14 +69,14 @@
 
                     </div>
                 </div>
-                <!--
-                    <div class="card-text">
+                
+                    <div class="card-text"  *ngIf="isInternal">
                         <div class="row">
                             <div class="col-sm">
-                                {{application.description}}
+                                Client: {{application.owner.firstName}} {{application.owner.lastName}}
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
             </div>
             <div class="card-footer">
                 <div *ngIf="application.agent">
@@ -85,7 +85,7 @@
 
                     <div class="row">
                         <div class="col-sm" routerLinkActive="active" routerLink="../profile/{{application.agent.id}}">
-                            <p class="card-text text-primary">Agent assigned: {{application.agent.username}} </p>
+                            <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}} {{application.agent.lastName}} </p>
                         </div>
 
                         <div class="col-sm text-right" *ngIf="isInternal">
@@ -122,4 +122,4 @@
 
     </div>
 
-</div>
+</div> 

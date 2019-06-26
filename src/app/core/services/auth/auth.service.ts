@@ -10,8 +10,8 @@ export class AuthService {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-  //SERVER_URL = "http://localhost:8080/auth";
-  SERVER_URL = "http://ec2-52-64-154-235.ap-southeast-2.compute.amazonaws.com:8080/auth";
+  SERVER_URL = "http://localhost:8080/auth";
+  //SERVER_URL = "http://ec2-52-64-154-235.ap-southeast-2.compute.amazonaws.com:8080/auth";
 
   TOKEN = "token";
 
