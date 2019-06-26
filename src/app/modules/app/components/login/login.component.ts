@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
             break;
           }
           default: {
-            console.log("Invalid choice");
+            //console.log("Invalid choice");
             break;
           }
         }

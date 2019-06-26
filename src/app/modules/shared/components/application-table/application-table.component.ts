@@ -38,8 +38,8 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getApplication(event) {
-    console.log(this.hasAgent);
-    console.log("This is my userType", this.userType)
+   // console.log(this.hasAgent);
+    //console.log("This is my userType", this.userType)
     switch (this.userType) {
       case "USER": this.getUserApplication(event);
         this.isUser = true;
@@ -54,7 +54,7 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getUserApplication(event) {
-    console.log(this.dateOrder)
+    //(this.dateOrder)
     if (event != null) {
       this.config.currentPage = event
     }
@@ -98,31 +98,25 @@ export class ApplicationTableComponent implements OnInit {
 
 
   removeAgentFromApplication(currentApplicationId) {
-    console.log(currentApplicationId.id)
     this.applicationService.removeAgentFromApplication(currentApplicationId.id)
       .subscribe(
         res => {
-          console.log("updated!")
           this.ngOnInit();
         },
         err => {
-          console.log(err)
+          alert("Cannot remove agent");
         }
       )
   }
 
   assignAgentToApplication(currentApplication, agentId) {
-    console.log("asdasdasd")
     this.applicationService.assignAgentToApplication(currentApplication,
       currentApplication.id, agentId).subscribe(
         res => {
           this.ngOnInit();
         },
         err => {
-          alert("Assigning Agent Failed, Could not find Agent.")
-          console.log(err)
-
-
+          alert("Assigning Agent Failed");
         }
       )
   }

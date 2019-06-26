@@ -48,11 +48,11 @@ export class CreateApplicationComponent implements OnInit {
   createApplication(stepper: MatStepper) {
     this.applicationService.createApplication(this.newApplication).subscribe(
       res => {
-        console.log("APPLICATION CREATED")
+        //console.log("APPLICATION CREATED")
         stepper.next();
       },
       err => {
-        console.log("APPLICATION FAILED")
+        //console.log("APPLICATION FAILED")
         alert("Enter Details")
       }
     )
