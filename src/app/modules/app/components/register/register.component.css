@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("src\assets\images\login-background.jpg");
+    overflow: auto
   }
   
   .logo-wrapper {
@@ -32,7 +33,10 @@
     margin-top: 50px;
     min-width: 400px;
     max-width: 500px;
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   
   

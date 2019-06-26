@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("src\assets\images\login-background.jpg");
+  overflow: auto;
 }
 
 .logo-wrapper {
