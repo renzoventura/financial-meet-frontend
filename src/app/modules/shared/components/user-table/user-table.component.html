@@ -50,7 +50,7 @@
         </div>
 
         <div class="card user-layer" *ngFor="let user of users | paginate: config;">
-            <div class="card-body">
+            <div class="card-body" routerLinkActive="active" routerLink="../profile/{{user.id}}">
                 <div class="row">
                     <div class="col-sm">
                         #{{user.id}} {{user.firstName}} {{user.lastName}}

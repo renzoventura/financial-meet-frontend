@@ -10,8 +10,9 @@ export class AgentProfileComponent implements OnInit {
 
   @Input() agentId;
 
-  agent: Object;
+  agent;
   agentUsername: String;
+  agentFirstName: String;
 
   specialisations = ["PERSONAL LOANS", "HOME LOANS", "FIRST TIME HOME OWNER", "REFINANCE"]
   awards = ["RCP Commercial Office Property Award", "Yardi Retail Property Award", "CBRE Industrial Property Award", "Rider Levett Bucknall Supreme Award"]
@@ -21,8 +22,10 @@ export class AgentProfileComponent implements OnInit {
   ngOnInit() {
     this.authService.getAgentById(this.agentId).subscribe(
       res => {
+        console.log(res.body)
         this.agent = res.body;
         this.agentUsername = res.body.username;
+        this.agentFirstName = res.body.firstName;
       }
     )
   }

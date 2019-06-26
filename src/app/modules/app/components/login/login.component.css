@@ -46,10 +46,8 @@ mat-card-title, mat-card-content {
 }
 
 .error {
-  padding: 16px;
-  width: 300px;
-  color: white;
-  background-color: red;
+  text-align: center;
+  color: red;
 }
 
 .sign-in {

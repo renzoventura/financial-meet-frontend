@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   
   loginUserData = {}
 
+  error: String;
+
   login() {
     return this.authService.login(this.loginUserData).subscribe(
       res => {
@@ -39,6 +41,9 @@ export class LoginComponent implements OnInit {
             break;
           }
         }
+      },
+      err => {
+        this.error = "Account credentials are invalid";
       }
     )
   }
