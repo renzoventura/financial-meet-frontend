@@ -6,9 +6,8 @@
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
-              <div class="application-question">What type of financial service are you searching for?</div>
-              <div class="application-question-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              <div class="application-question">Application type?</div>
+              <div class="application-question-details">eg. Mortgage, Insurance or etc
               </div>
             </div>
           </div>
@@ -64,17 +63,19 @@
       </div>
     </form>
   </mat-step>
+
+
+
+
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Personal</ng-template>
+      <ng-template matStepLabel>Income</ng-template>
       <div class="container application-wrapper">
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
-              <div class="application-question">What is your yearly income?</div>
-              <div class="application-question-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              </div>
+              <div class="application-question">Annual Income</div>
+              <div class="application-question-details">What is your yearly income?</div>
             </div>
           </div>
           <div class="col">
@@ -88,14 +89,107 @@
             </mat-form-field>
           </div>
         </div>
+
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
-              <div class="application-question">How much are you looking to borrow?</div>
+              <div class="application-question">Regular Overtime/Bonus</div>
+              <div class="application-question-details">Any relevant bonuses?</div>
+            </div>
+          </div>
+          <div class="col">
+            <mat-form-field class="mat-form-field-application">
+              <mat-label>Amount</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                  {{ range }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row question-wrapper">
+            <div class="col">
+              <div class="container">
+                <div class="application-question">Rental Income</div>
+                <div class="application-question-details">Average yearly income from rental type sources</div>
+              </div>
+            </div>
+            <div class="col">
+              <mat-form-field class="mat-form-field-application">
+                <mat-label>Amount</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                    {{ range }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row question-wrapper">
+              <div class="col">
+                <div class="container">
+                  <div class="application-question">Business Income</div>
+                  <div class="application-question-details">Average yearly income from your Business/businesses</div>
+                </div>
+              </div>
+              <div class="col">
+                <mat-form-field class="mat-form-field-application">
+                  <mat-label>Amount</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                      {{ range }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+        <div class="row question-wrapper">
+          <div class="col">
+            <div class="container">
+              <div class="application-question">Other Income (Specify)</div>
+              <div class="application-question-details">Average yearly income from external sources</div>
+            </div>
+          </div>
+          <div class="col">
+            <mat-form-field class="mat-form-field-application">
+              <mat-label>Amount</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                  {{ range }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+      <div class="row button-wrapper">
+        <div class="col">
+          <button class="back-button" mat-button matStepperPrevious>Back</button>
+        </div>
+        <div class="col">
+          <button class="next-button" mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>Loan</ng-template>
+      <div class="container application-wrapper">
+
+
+        <div class="row question-wrapper">
+          <div class="col">
+            <div class="container">
+              <div class="application-question">Expected loan?</div>
               <div class="application-question-details">
-                Decore causae no vel, ei idque nonumy vis, ut his laudem tritani adipiscing. No vix delicata
-                dissentiunt, tollit dolore sapientem qui ei. Veniam tritani te sit, vis dicta appellantur no. Usu habeo
-                illud ea, sumo novum quo ad.
+                How much are you looking to borrow?
               </div>
             </div>
           </div>
@@ -113,14 +207,14 @@
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
-              <div class="application-question">Do you have any loan debt?</div>
-              <div class="application-question-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              <div class="application-question">Loan?</div>
+              <div class="application-question-details">Are you currently in debt?
               </div>
             </div>
           </div>
           <div class="col">
             <mat-form-field class="mat-form-field-application">
-              <mat-label>Yes or</mat-label>
+              <mat-label>Yes or No</mat-label>
               <mat-select>
                 <mat-option *ngFor="let boolean of yesOrNo" [value]="boolean">
                   {{ boolean }}
@@ -138,10 +232,11 @@
             </div>
           </div>
           <div class="col">
-              <mat-form-field>
-                  <textarea [(ngModel)]="newApplication.title" [ngModelOptions]="{standalone: true}" name="title" class="details-form" matInput placeholder="Enter details here"></textarea>
-                  <mat-hint align="start"><strong>Enter relevant information only</strong> </mat-hint>
-                </mat-form-field>
+            <mat-form-field>
+              <textarea [(ngModel)]="newApplication.title" [ngModelOptions]="{standalone: true}" name="title"
+                class="details-form" matInput placeholder="Enter details here"></textarea>
+              <mat-hint align="start"><strong>Enter relevant information only</strong> </mat-hint>
+            </mat-form-field>
           </div>
         </div>
 
@@ -151,11 +246,12 @@
           <button class="back-button" mat-button matStepperPrevious>Back</button>
         </div>
         <div class="col">
-          <button class="next-button" mat-button (click)="createApplication(stepper)" >Next</button>
+          <button class="next-button" mat-button (click)="createApplication(stepper)">Next</button>
         </div>
       </div>
     </form>
   </mat-step>
+
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     <div class="row question-wrapper">
@@ -174,7 +270,7 @@
       </div>
       <div class="col">
         <!-- <button class="back-button" mat-button (click)="stepper.reset()">Done</button> -->
-        <button class="back-button" mat-button  routerLinkActive="active" routerLink="../applications">Done</button>
+        <button class="back-button" mat-button routerLinkActive="active" routerLink="../applications">Done</button>
 
       </div>
     </div>
