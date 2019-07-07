@@ -56,27 +56,34 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm">
-                        #{{application.id}} {{application.title}}
+                        Unique ID: #{{application.id}}
                     </div>
                     <div class="col-sm">
                         Date Created:
-
                         {{application.dateCreated}}
                     </div>
                     <div class="col-sm application-status">
                         Status:
                         <p class="application-status-value"> {{application.status}} </p>
-
                     </div>
                 </div>
-                
-                    <div class="card-text"  *ngIf="isInternal || isAgent">
-                        <div class="row">
-                            <div class="col-sm">
-                                Client: {{application.owner.firstName}} {{application.owner.lastName}}
-                            </div>
+                <div class="row">
+                    <div class="col-sm">
+                        {{application.applicationType}} 
+                    </div>
+                    <div class="col-sm">
+                        {{application.applicationSubType}}
+                    </div>
+                    <div class="col-sm"></div>
+                </div>
+
+                <div class="card-text" *ngIf="isInternal || isAgent">
+                    <div class="row">
+                        <div class="col-sm">
+                            Client: {{application.owner.firstName}} {{application.owner.lastName}}
                         </div>
-                    </div> 
+                    </div>
+                </div>
             </div>
             <div class="card-footer">
                 <div *ngIf="application.agent">
@@ -85,7 +92,8 @@
 
                     <div class="row">
                         <div class="col-sm" routerLinkActive="active" routerLink="../profile/{{application.agent.id}}">
-                            <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}} {{application.agent.lastName}} </p>
+                            <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}}
+                                {{application.agent.lastName}} </p>
                         </div>
 
                         <div class="col-sm text-right" *ngIf="isInternal">
@@ -122,4 +130,4 @@
 
     </div>
 
-</div> 
+</div>

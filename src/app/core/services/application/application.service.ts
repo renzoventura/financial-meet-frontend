@@ -19,6 +19,11 @@ export class ApplicationService {
 
   CREATE_APPLICATION__URL = this.SERVER_APPLICATION_URL + "/create"
 
+  GET_APPLICATION_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-types/title"
+
+  GET_APPLICATION_SUB_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-sub-types/title"
+
+
   getUserApplication(title, page, size, order) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
@@ -43,8 +48,10 @@ export class ApplicationService {
     )
   }
 
-  createApplication(application) {
-    return this.http.post<any>(this.CREATE_APPLICATION__URL + "/mortgage", application);
+  createApplication(application, applicationType, applicationSubType) {
+    let params = new HttpParams();
+    let CREATE_APPLICATION_URL_TYPE_SUBTYPE = this.CREATE_APPLICATION__URL + "/" + applicationType + "/" + applicationSubType
+    return this.http.post<any>(CREATE_APPLICATION_URL_TYPE_SUBTYPE, application);
   }
 
   getAllApplications(title, page, size, order) {
@@ -69,10 +76,23 @@ export class ApplicationService {
     return this.http.get<any>(REMOVE_AGENT_URL)
   }
 
-
   progressApplication(currentApplicationId) {
     var PROGESS_APPLICATION_URL = this.PROGRESS_APPLICATION + "/" + currentApplicationId
     return this.http.post<any>(PROGESS_APPLICATION_URL, null);
+  }
+
+  getApplicationTypesTitles() {
+    return this.http.get<any>(this.GET_APPLICATION_TYPES_TITLES);
+  }
+
+
+
+  getApplicationSubTypesTitles(title) {
+    let params = new HttpParams();
+    params = params.append('parent', title);
+    return this.http.get<any>(this.GET_APPLICATION_SUB_TYPES_TITLES,
+      { params: params }
+    )
   }
 
 }

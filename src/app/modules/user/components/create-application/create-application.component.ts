@@ -15,11 +15,17 @@ export class CreateApplicationComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
   applicationExtraDetails: object= {};
 
-  applicationTypes = ["Mortgage",
-    "Insurance", "banking", "Advisory", "Wealth Management", "Mutual Funds"]
+  // applicationTypes = ["Mortgage",
+  //   "Insurance", "banking", "Advisory", "Wealth Management", "Mutual Funds"]
+  applicationType: String;
+  applicationSubType: String;
+  applicationTypes : [];
+  applicationSubTypes: [];
+  applicationSubTypeError = true;
 
   moneyRanges = [
     "$10,000-$50,000",
@@ -43,16 +49,18 @@ export class CreateApplicationComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+    this.getApplicationTypesTitles()
   }
 
   createApplication(stepper: MatStepper) {
-    this.applicationService.createApplication(this.newApplication).subscribe(
+    this.applicationService.createApplication(this.newApplication, this.applicationType, this.applicationSubType).subscribe(
       res => {
-        //console.log("APPLICATION CREATED")
         stepper.next();
       },
       err => {
-        //console.log("APPLICATION FAILED")
         alert("Enter Details")
       }
     )
@@ -60,6 +68,31 @@ export class CreateApplicationComponent implements OnInit {
 
   finish() {
     this.router.navigate(["../applications"])
+  }
+
+  getApplicationTypesTitles() {
+    this.applicationService.getApplicationTypesTitles().subscribe(
+      res => {
+        this.applicationTypes = res;
+      }
+    )
+  }
+
+  getApplicationSubTypesTitles() {
+    this.applicationService.getApplicationSubTypesTitles(this.applicationType).subscribe(
+      res => {
+        this.applicationSubTypes = res;
+      }
+    )
+  }
+
+  
+  checkApplicationTypeAndSubType(stepper){
+    if (this.applicationType != null && this.applicationSubType != null) {
+      stepper.next();
+    } else {
+      alert ("Please select application Type")
+    }
   }
 
 }

@@ -14,8 +14,8 @@
           <div class="col">
             <mat-form-field class="mat-form-field-application">
               <mat-label>Application Type</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let type of applicationTypes" [value]="type">
+              <mat-select [(ngModel)]="applicationType" [ngModelOptions]="{standalone: true}" (selectionChange)="getApplicationSubTypesTitles($event)" required>
+                <mat-option  *ngFor="let type of applicationTypes" [value]="type">
                   {{ type }}
                 </mat-option>
               </mat-select>
@@ -25,40 +25,33 @@
         <div class="row question-wrapper">
           <div class="col">
             <div class="container">
-              <div class="application-question">No pri suas diam periculis, ut est possit facilis hendrerit?</div>
+              <div class="application-question">Application Sub Type?</div>
               <div class="application-question-details">
-                Decore causae no vel, ei idque nonumy vis, ut his laudem tritani adipiscing. No vix delicata
-                dissentiunt, tollit dolore sapientem qui ei. Veniam tritani te sit, vis dicta appellantur no. Usu habeo
-                illud ea, sumo novum quo ad.
+                Sub category of specified application
               </div>
             </div>
           </div>
           <div class="col">
-            <mat-form-field class="mat-form-field-application">
-              <input matInput placeholder="Enter value">
-            </mat-form-field>
+              <mat-form-field class="mat-form-field-application">
+                  <mat-label>Application Subtype</mat-label>
+                  <mat-select (click)="test()" [(ngModel)]="applicationSubType" [ngModelOptions]="{standalone: true}" required>
+                    <mat-option  *ngFor="let subType of applicationSubTypes" [value]="subType">
+                      {{ subType }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="applicationSubTypeError">
+                      Select Application Type First
+                    </mat-error>
+                </mat-form-field>
           </div>
         </div>
-        <div class="row question-wrapper">
-          <div class="col">
-            <div class="container">
-              <div class="application-question">Sit legere?</div>
-              <div class="application-question-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <mat-form-field class="mat-form-field-application">
-              <input matInput placeholder="Enter value">
-            </mat-form-field>
-          </div>
-        </div>
+
       </div>
       <div class="row button-wrapper">
         <div class="col">
         </div>
         <div class="col">
-          <button class="next-button" mat-button matStepperNext>Next</button>
+          <button class="next-button" mat-button (click)="checkApplicationTypeAndSubType(stepper)">Next</button>
         </div>
       </div>
     </form>
