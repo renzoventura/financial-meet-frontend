@@ -10,28 +10,12 @@
                         <input type="text" [(ngModel)]="title" name="title" matInput placeholder="Title"
                             spellcheck="false">
                     </mat-form-field>
-
-                    <i (click)="getApplication(null)" class="material-icons">
-                        search
-                    </i>
                 </div>
-                <!-- <div class="col-sm">
-                    <mat-form-field class="mat-form-field-application">
-                        <mat-label>Agent</mat-label>
-                        <mat-select [(ngModel)]="hasAgent" name="hasAgent" (change)="getApplication()">
-                            <mat-option [value]="true">
-                                Assigned
-                            </mat-option>
-                            <mat-option [value]="false">
-                                Not Assigned
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div> -->
                 <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
-                        <mat-label>Order</mat-label>
-                        <mat-select [(ngModel)]="dateOrder" name="dateOrder" (selectionChange)="getApplication()">
+                        <mat-label>Date order</mat-label>
+                        <mat-select [(ngModel)]="dateOrder" name="dateOrder" 
+                        (selectionChange)="getApplication()">
                             <mat-option *ngFor="let dateOrder of dateOrders" [value]="dateOrder">
                                 {{ dateOrder }}
                             </mat-option>
@@ -40,9 +24,36 @@
 
                 </div>
 
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-application">
+                        <mat-label>Type</mat-label>
+                        <mat-select [(ngModel)]="applicationType" [ngModelOptions]="{standalone: true}"
+                            (selectionChange)="resetSubType(); getApplication()">
+                            <mat-option *ngFor="let type of applicationTypes" [value]="type">
+                                {{ type }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-application">
+                        <mat-label>Sub type</mat-label>
+                        <mat-select [(ngModel)]="applicationSubType"
+                            [ngModelOptions]="{standalone: true}"
+                            (selectionChange)="getApplication()">
+                            <mat-option *ngFor="let subType of applicationSubTypes" [value]="subType">
+                                {{ subType }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="applicationSubTypeError">
+                            Select Application Type First
+                        </mat-error>
+                    </mat-form-field>
+                </div>
             </div>
-
-            <button (click)="getApplication(null)" style="display: none"> </button>
+            <div class="col-sm"> 
+                <button (click)="getApplication(null)" class="search-button" mat-button>Search</button>
+            </div>
 
         </form>
     </div>
@@ -69,10 +80,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm">
-                        {{application.applicationType}} 
+                        {{application.type}} 
                     </div>
                     <div class="col-sm">
-                        {{application.applicationSubType}}
+                        {{application.subType}}
                     </div>
                     <div class="col-sm"></div>
                 </div>

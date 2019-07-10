@@ -24,25 +24,29 @@ export class ApplicationService {
   GET_APPLICATION_SUB_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-sub-types/title"
 
 
-  getUserApplication(title, page, size, order) {
+  getUserApplication(title, page, size, order, type, subType) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
     params = params.append('order', order);
+    params = params.append('type', type);
+    params = params.append('subType', subType);
     return this.http.get<any>(this.GET_APPLICATION_BY_USER,
       { params: params }
     )
   }
 
-  getAgentApplication(title, page, size, order) {
+  getAgentApplication(title, page, size, order, type, subType) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
     params = params.append('order', order);
+    params = params.append('type', type);
+    params = params.append('subType', subType);
     return this.http.get<any>(this.GET_APPLICATION_BY_AGENT,
       { params: params }
     )
@@ -54,13 +58,15 @@ export class ApplicationService {
     return this.http.post<any>(CREATE_APPLICATION_URL_TYPE_SUBTYPE, application);
   }
 
-  getAllApplications(title, page, size, order) {
+  getAllApplications(title, page, size, order, type, subType) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
     params = params.append('order', order);
+    params = params.append('type', type);
+    params = params.append('subType', subType);
     return this.http.get<any>(this.GET_ALL_APPLICATION,
       { params: params }
     )

@@ -12,15 +12,19 @@ export class ApplicationTableComponent implements OnInit {
 
   userApplications: any[];
   noApplications = false;
-  title: String = "";
-  config: any;
-
-  hasAgent: boolean;
-  dateOrder: string = "asc";
-
+  
   isUser: boolean = false;
   isAgent: boolean = false;
   isInternal: boolean = false;
+  config: any;
+
+  title: String = "";
+  dateOrder: string = "asc";
+  applicationType: String;
+  applicationSubType: String;
+  applicationTypes : [];
+  applicationSubTypes: [];
+
 
   dateOrders = ["ASC", "DESC"]
 
@@ -30,6 +34,8 @@ export class ApplicationTableComponent implements OnInit {
       currentPage: 1,
     };
     this.getApplication(null);
+    this.getApplicationTypesTitles()
+
   }
 
   constructor(private applicationService: ApplicationService,
@@ -40,6 +46,9 @@ export class ApplicationTableComponent implements OnInit {
   getApplication(event) {
    // console.log(this.hasAgent);
     //console.log("This is my userType", this.userType)
+    if (this.applicationType != null) {
+      this.getApplicationSubTypesTitles();
+    }
     switch (this.userType) {
       case "USER": this.getUserApplication(event);
         this.isUser = true;
@@ -59,7 +68,8 @@ export class ApplicationTableComponent implements OnInit {
       this.config.currentPage = event
     }
     this.applicationService.getUserApplication(
-      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder, this.applicationType,
+      this.applicationSubType
     ).subscribe(
       res => {
         this.userApplications = res.content
@@ -73,7 +83,8 @@ export class ApplicationTableComponent implements OnInit {
       this.config.currentPage = event
     }
     this.applicationService.getAgentApplication(
-      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder, this.applicationType,
+      this.applicationSubType
     ).subscribe(
       res => {
         this.userApplications = res.content
@@ -87,8 +98,8 @@ export class ApplicationTableComponent implements OnInit {
       this.config.currentPage = event
     }
     this.applicationService.getAllApplications(
-      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder
-    ).subscribe(
+      this.title, this.config.currentPage, this.config.itemsPerPage, this.dateOrder, this.applicationType,
+      this.applicationSubType    ).subscribe(
       res => {
         this.userApplications = res.content
         this.config.totalItems = res.totalElements
@@ -133,5 +144,26 @@ export class ApplicationTableComponent implements OnInit {
       }
     )
   }
+
+  getApplicationTypesTitles() {
+    this.applicationService.getApplicationTypesTitles().subscribe(
+      res => {
+        this.applicationTypes = res;
+      }
+    )
+  }
+
+  getApplicationSubTypesTitles() {
+    this.applicationService.getApplicationSubTypesTitles(this.applicationType).subscribe(
+      res => {
+        this.applicationSubTypes = res;
+      }
+    )
+  }
+  
+  resetSubType() {
+    this.applicationSubType = "";
+  }
+
 
 }

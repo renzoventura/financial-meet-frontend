@@ -34,7 +34,7 @@
           <div class="col">
               <mat-form-field class="mat-form-field-application">
                   <mat-label>Application Subtype</mat-label>
-                  <mat-select (click)="test()" [(ngModel)]="applicationSubType" [ngModelOptions]="{standalone: true}" required>
+                  <mat-select (click)="test()" [(ngModel)]="applicationSubType" [ngModelOptions]="{standalone: true}">
                     <mat-option  *ngFor="let subType of applicationSubTypes" [value]="subType">
                       {{ subType }}
                     </mat-option>
