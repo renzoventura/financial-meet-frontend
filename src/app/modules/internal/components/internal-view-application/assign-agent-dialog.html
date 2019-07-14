@@ -1,0 +1,78 @@
+<h1 mat-dialog-title>Assign agent to Application {{ applicationId }}</h1>
+<div mat-dialog-content>
+
+  
+
+    <div class="data-table-page">
+            <form>
+
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <mat-form-field>
+                                <input type="text" [(ngModel)]="firstName" name="firstName" matInput
+                                    placeholder="First Name" spellcheck="false">
+                            </mat-form-field>
+        
+                            <i (click)="getAgents(null)" class="material-icons">
+                                search
+                            </i>
+                        </div>
+                        <div class="col-sm">
+                            <mat-form-field>
+                                <input type="text" [(ngModel)]="lastName" name="lastName" matInput
+                                    placeholder="Last Name" spellcheck="false">
+                            </mat-form-field>
+                            <i (click)="getAgents(null)" class="material-icons">
+                                    search
+                                </i>
+                        </div>
+                        <div class="col-sm">
+                            <mat-form-field class="mat-form-field-user">
+                                <mat-label>Suburb</mat-label>
+                                <mat-select [(ngModel)]="suburb" name="suburb" (selectionChange)="getAgents(null)">
+                                    <mat-option *ngFor="let suburb of suburbs" [value]="suburb">
+                                        {{ suburb }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+        
+                        </div>
+        
+                    </div>
+        
+                    <button (click)="getAgents(null)" style="display: none"> </button>
+        
+                </form>
+        <div>
+            <div class="pagination-container">
+                <pagination-controls class="pagination" (pageChange)="getAgents($event)"></pagination-controls>
+            </div>
+    
+            <div class="card user-layer" *ngFor="let user of users | paginate: config;" (click)="selectCompany(user)" 
+            [class.selected]="user === currentAgent">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm">
+                            #{{user?.id}} {{user?.firstName}} {{user?.lastName}}
+                        </div>
+                        <div class="col-sm">
+                            {{user?.suburb}}
+                        </div>
+                    </div>
+                </div>    
+            </div>
+    
+        </div>
+    
+    </div>
+
+
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="assignAgentToApplication()" class="assign-button" cdkFocusInitial>Ok</button>
+  <!-- //<button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+
+</div>

@@ -9,6 +9,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AgenthomeComponent } from './components/agenthome/agenthome.component';
 import { AgentViewProfileComponent } from './components/agent-view-profile/agent-view-profile.component';
 import { AgentViewApplicationsComponent } from './components/agent-view-applications/agent-view-applications.component';
+import { AgentViewApplicationComponent } from './components/agent-view-application/agent-view-application.component';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -16,7 +18,7 @@ import { AgentViewApplicationsComponent } from './components/agent-view-applicat
     AgentComponent, 
     AgenthomeComponent, 
     AgentViewProfileComponent, 
-    AgentViewApplicationsComponent
+    AgentViewApplicationsComponent, AgentViewApplicationComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { AgentViewApplicationsComponent } from './components/agent-view-applicat
     HttpClientModule,
     FormsModule,
     SharedModule,
+    MatButtonModule
   ]
 })
 export class AgentModule { }

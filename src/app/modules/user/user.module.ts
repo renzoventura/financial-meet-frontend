@@ -12,6 +12,7 @@ import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, Mat
 import {MatStepperModule} from '@angular/material/stepper';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { UserViewProfileComponent } from './components/user-view-profile/user-view-profile.component';
+import { UserViewApplicationComponent } from './components/user-view-application/user-view-application.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserViewProfileComponent } from './components/user-view-profile/user-vi
     CreateApplicationComponent,
     UserComponent,
     ViewApplicationsComponent,
-    UserViewProfileComponent
+    UserViewProfileComponent,
+    UserViewApplicationComponent
   ],
   imports: [
     CommonModule,

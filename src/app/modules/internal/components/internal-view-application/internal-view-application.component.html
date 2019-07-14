@@ -1,0 +1,24 @@
+<div class="wrapper" *ngIf="application">
+  <div *ngIf="!application?.agent">
+    <div class="row">
+      <div class="col-sm text-left">
+      </div>
+      <div class="col-sm text-right">
+        <button class="text-right" mat-raised-button class="assign-button" (click)="openDialog()">Assign Agent</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="application?.agent">
+    <div class="row">
+      <div class="col-sm">
+        Assigned Agent: {{application.agent.firstName}} {{application.agent.lastName}}
+      </div>
+      <div class="col-sm text-right">
+        <button class="text-right" mat-raised-button (click)="removeAgentFromApplication(application)"
+          color="warn">Remove Agent</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<shared-application-profile [application]="application"></shared-application-profile>

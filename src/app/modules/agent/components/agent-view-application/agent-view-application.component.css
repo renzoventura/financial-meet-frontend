@@ -1,0 +1,15 @@
+.wrapper {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Ubuntu;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+
+.progress-button {
+    background-color: green;
+    color: white;
+    font-family: Ubuntu;
+}

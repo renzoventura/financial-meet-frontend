@@ -72,9 +72,12 @@ export class ApplicationService {
     )
   }
 
-  assignAgentToApplication(application, applicationId, agentId) {
-    var ASSIGN_AGENT_URL = this.SERVER_APPLICATION_URL + "/" + applicationId + "/assign/agent/" + agentId
-    return this.http.put<any>(ASSIGN_AGENT_URL, application)
+  assignAgentToApplication(applicationId, agentId) {
+    var ASSIGN_AGENT_URL = this.SERVER_APPLICATION_URL + "/assign";
+    let params = new HttpParams();
+    params = params.append('applicationId', applicationId);
+    params = params.append('agentId', agentId);
+    return this.http.put<any>(ASSIGN_AGENT_URL, params)
   }
 
   removeAgentFromApplication(currentApplicationId) {
@@ -91,12 +94,18 @@ export class ApplicationService {
     return this.http.get<any>(this.GET_APPLICATION_TYPES_TITLES);
   }
 
-
-
   getApplicationSubTypesTitles(title) {
     let params = new HttpParams();
     params = params.append('parent', title);
     return this.http.get<any>(this.GET_APPLICATION_SUB_TYPES_TITLES,
+      { params: params }
+    )
+  }
+
+  getApplicationById(id) {
+    let params = new HttpParams();
+    params = params.append('id', id);
+    return this.http.get<any>(this.SERVER_APPLICATION_URL,
       { params: params }
     )
   }

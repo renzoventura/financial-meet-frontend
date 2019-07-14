@@ -5,6 +5,7 @@ import { AgenthomeComponent } from './components/agenthome/agenthome.component';
 import { AgentGuard } from 'src/app/core/guards/agent.guard';
 import { AgentViewProfileComponent } from './components/agent-view-profile/agent-view-profile.component';
 import { AgentViewApplicationsComponent } from './components/agent-view-applications/agent-view-applications.component';
+import { AgentViewApplicationComponent } from './components/agent-view-application/agent-view-application.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,12 @@ const routes: Routes = [
         path: 'profile/:id',
         component: AgentViewProfileComponent,
         canActivate: [AgentGuard]
-      } 
+      },
+      {
+        path: 'application/:id',
+        component: AgentViewApplicationComponent,
+        canActivate: [AgentGuard]
+      }
     ]
 }
 ];

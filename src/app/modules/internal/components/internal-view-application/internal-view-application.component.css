@@ -1,0 +1,20 @@
+.wrapper {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Ubuntu;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    font-family: Ubuntu;
+}
+
+.assign-button {
+    background-color: goldenrod;
+    color: white;
+    font-family: Ubuntu;
+}
