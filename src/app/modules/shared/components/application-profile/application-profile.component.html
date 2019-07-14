@@ -1,0 +1,35 @@
+<div class="application-profile-page">
+  <div *ngIf="application">
+    <div class="row">
+      <div class="col-sm application-subType">
+        {{ application?.subType }}
+      </div>
+      <div class="col-sm application-status">
+        Status: {{ application?.status }}
+
+      </div>
+    </div>
+    <h1>
+      Application #{{ application?.id }}
+    </h1>
+    <div>
+      {{ application?.description }}
+    </div>
+    <div>
+      Owner : {{ application?.owner.firstName }} {{ application?.owner.lastName }}
+    </div>
+    <div>
+      <div *ngIf="application?.agent">
+        Agent : {{ application?.agent.firstName }} {{ application?.agent.lastName }}
+      </div>
+      <div *ngIf="!application?.agent">
+        Agent : Not Assigned
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!application" class="application-not-found">
+    Application does not exist
+  </div>
+</div>

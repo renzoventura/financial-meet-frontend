@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { Placeholders } from 'src/app/models/placeholders/placeholders';
 
 @Component({
   selector: 'app-user-table',
@@ -16,7 +17,6 @@ export class UserTableComponent implements OnInit {
   suburb = ""
 
   suburbs = ["Albany", "Bayswater", "Bayview", "Beach Haven", "Belmont", "Birkdale", "Birkenhead", "Browns Bay", "Campbells Bay", "Castor Bay", "Chatswood", "Cheltenham", "Crown Hill", "Devonport", "Fairview Heights", "Forrest Hill", "Glenfield", "Greenhithe", "Hauraki", "Highbury", "Long Bay", "Mairangi Bay", "Pinehill", "Rosedale", "Rothesay Bay", "Sunnynook", "Takapuna", "Torbay", "Wairau Valley", "Westlake"];
-
   constructor(private authServer: AuthService) { }
 
   ngOnInit() {
@@ -27,7 +27,6 @@ export class UserTableComponent implements OnInit {
     this.getAgents(null);
 
   }
-
 
   getAgents(event) {
     if (event != null) {

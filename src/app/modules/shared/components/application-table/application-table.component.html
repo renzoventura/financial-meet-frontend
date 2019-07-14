@@ -64,7 +64,7 @@
         </div>
 
         <div class="card application-layer" *ngFor="let application of userApplications | paginate: config;">
-            <div class="card-body">
+            <div class="card-body" routerLinkActive="active" routerLink="../application/{{application.id}}">
                 <div class="row">
                     <div class="col-sm">
                         Unique ID: #{{application.id}}
@@ -130,15 +130,9 @@
                                     (click)="assignAgentToApplication(application, agentId.value)">Assign Agent</button>
                             </form>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>

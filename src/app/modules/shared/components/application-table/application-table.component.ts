@@ -121,8 +121,7 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   assignAgentToApplication(currentApplication, agentId) {
-    this.applicationService.assignAgentToApplication(currentApplication,
-      currentApplication.id, agentId).subscribe(
+    this.applicationService.assignAgentToApplication(currentApplication.id, agentId).subscribe(
         res => {
           this.ngOnInit();
         },

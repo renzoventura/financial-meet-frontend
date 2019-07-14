@@ -1,0 +1,25 @@
+.application-profile-page {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Ubuntu;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+.application-subType {
+    font-size: 30px;
+    border-radius: 10px;
+    color: goldenrod;
+    font-family: Ubuntu;
+}
+
+.application-status {
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: Ubuntu;
+}
+
+.application-not-found {
+    text-align: center;
+}
