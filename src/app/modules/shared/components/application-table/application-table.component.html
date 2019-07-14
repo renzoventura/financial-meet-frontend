@@ -106,30 +106,6 @@
                             <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}}
                                 {{application.agent.lastName}} </p>
                         </div>
-
-                        <div class="col-sm text-right" *ngIf="isInternal">
-                            <button class="text-right" mat-raised-button class="remove-button"
-                                (click)="removeAgentFromApplication(application)">Remove Agent</button>
-                        </div>
-
-                        <div class="col-sm text-right" *ngIf="isAgent && !(application.status == 'DONE')">
-                            <button class="text-right" mat-raised-button class="progress-button"
-                                (click)="progressApplication(application)">Progress Application</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf="!application.agent">
-                    <div class="row">
-
-                        <div class="col-sm" *ngIf="isInternal">
-                            <form>
-                                <input class="assign-agent-input" type="number" name="agentId" value="agentId"
-                                    placeholder="Agent Id" spellcheck="false" #agentId>
-                                <button class="text-right" mat-raised-button class="assign-button"
-                                    (click)="assignAgentToApplication(application, agentId.value)">Assign Agent</button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

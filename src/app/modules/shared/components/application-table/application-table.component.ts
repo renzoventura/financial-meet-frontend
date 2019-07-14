@@ -44,8 +44,6 @@ export class ApplicationTableComponent implements OnInit {
   }
 
   getApplication(event) {
-   // console.log(this.hasAgent);
-    //console.log("This is my userType", this.userType)
     if (this.applicationType != null) {
       this.getApplicationSubTypesTitles();
     }
@@ -103,43 +101,6 @@ export class ApplicationTableComponent implements OnInit {
       res => {
         this.userApplications = res.content
         this.config.totalItems = res.totalElements
-      }
-    )
-  }
-
-
-  removeAgentFromApplication(currentApplicationId) {
-    this.applicationService.removeAgentFromApplication(currentApplicationId.id)
-      .subscribe(
-        res => {
-          this.ngOnInit();
-        },
-        err => {
-          alert("Cannot remove agent");
-        }
-      )
-  }
-
-  assignAgentToApplication(currentApplication, agentId) {
-    this.applicationService.assignAgentToApplication(currentApplication.id, agentId).subscribe(
-        res => {
-          this.ngOnInit();
-        },
-        err => {
-          alert("Assigning Agent Failed");
-        }
-      )
-  }
-
-  progressApplication(currentApplication) {
-    this.applicationService.progressApplication(currentApplication.id).subscribe(
-      res => {
-        this.ngOnInit();
-      },
-      err => {
-        console.log(err)
-        alert(err.error)
-
       }
     )
   }
