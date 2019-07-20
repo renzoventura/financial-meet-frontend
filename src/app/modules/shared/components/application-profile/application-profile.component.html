@@ -16,16 +16,6 @@
       Agent : Not Assigned
     </div>
 
-
-
-    <!-- <div class="progress-bar-wrapper">
-      <ul class="progressbar">
-        <li class="active">Created</li>
-        <li class="active">Assigned</li>
-        <li>Done</li>
-      </ul>
-    </div> -->
-
     <div *ngIf="application" class="progress-bar-wrapper">
       <ul class="progressbar">
         <li [class.active]="nodeIsActive(status)" *ngFor="let status of statuses">
@@ -33,8 +23,6 @@
         </li>
       </ul>
     </div>
-
-
 
   </div>
 
