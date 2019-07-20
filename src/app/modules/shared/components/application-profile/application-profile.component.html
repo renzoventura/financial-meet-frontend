@@ -1,31 +1,40 @@
 <div class="application-profile-page">
   <div *ngIf="application">
     <div class="row">
-      <div class="col-sm application-subType">
-        {{ application?.subType }}
-      </div>
-      <div class="col-sm application-status">
-        Status: {{ application?.status }}
-
-      </div>
+      <div class="col-sm application-subType">{{ application?.subType }}</div>
+      <div class="col-sm application-status">Status: {{ application?.status }}</div>
     </div>
-    <h1>
-      Application #{{ application?.id }}
-    </h1>
-    <div>
-      {{ application?.description }}
-    </div>
+    <h1>Application #{{ application?.id }}</h1>
+    <div>{{ application?.description }}</div>
     <div>
       Owner : {{ application?.owner.firstName }} {{ application?.owner.lastName }}
     </div>
-    <div>
-      <div *ngIf="application?.agent">
-        Agent : {{ application?.agent.firstName }} {{ application?.agent.lastName }}
-      </div>
-      <div *ngIf="!application?.agent">
-        Agent : Not Assigned
-      </div>
+    <div *ngIf="application?.agent">
+      Agent : {{ application?.agent.firstName }} {{ application?.agent.lastName }}
     </div>
+    <div *ngIf="!application?.agent">
+      Agent : Not Assigned
+    </div>
+
+
+
+    <!-- <div class="progress-bar-wrapper">
+      <ul class="progressbar">
+        <li class="active">Created</li>
+        <li class="active">Assigned</li>
+        <li>Done</li>
+      </ul>
+    </div> -->
+
+    <div *ngIf="application" class="progress-bar-wrapper">
+      <ul class="progressbar">
+        <li [class.active]="nodeIsActive(status)" *ngFor="let status of statuses">
+          {{ status }}
+        </li>
+      </ul>
+    </div>
+
+
 
   </div>
 

@@ -17,6 +17,7 @@ export class Application {
       this.owner = response.owner; 
       this.agent = response.agent ;
       this.internal = response.internal; 
+      this.type = response.type ;
       this.subType = response.subType ;
       this.status = response.status
       this.dateCreated = response.dateCreated;

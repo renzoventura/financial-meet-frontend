@@ -23,3 +23,81 @@
 .application-not-found {
     text-align: center;
 }
+
+.progress-bar-wrapper {
+    position: absolute;
+    margin: 50px auto;
+    width: 75%;
+    margin-left: -25px;
+
+}
+
+.progress-title {
+    text-align: center;
+    color:white;
+}
+
+.progressbar {
+    margin-top: 15px;
+    /* counter-reset: step;
+    counter-increment: step 2015; */
+}
+
+.progressbar li {
+    list-style-type: none;
+    float: left;
+    width: 33.33%;
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.progressbar li:before {
+    content: '' ;
+    /* content: counter(step); */
+    /*counter-increment: step; */
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 3px solid white;
+    display: block;
+    text-align: center;
+    margin: 0 auto auto auto;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    letter-spacing: 0px;
+}
+
+.progressbar li:after {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    top: 25px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressbar li:first-child:after {
+    content: none;
+}
+
+.progressbar li.active {
+    color: green;
+}
+
+.progressbar li.active:before {
+    content: '\2713';
+    /* content: url("src\assets\images\green-tick.png"); */
+    color: white;
+    font-size: 2.5em;
+    font-weight: bolder;
+    padding-top: -100px;
+    border-color: green;
+    background-color: green;
+}
+
+.progressbar li.active+li:after {
+    content: '';
+    background-color: #f1c40f;
+}

@@ -23,6 +23,8 @@ export class ApplicationService {
 
   GET_APPLICATION_SUB_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-sub-types/title"
 
+  GET_APPLICATION_STATUSES_BY_TYPE = "http://localhost:8080/status/application-type"
+
 
   getUserApplication(title, page, size, order, type, subType) {
     let minusOnePage = String(page - 1); //since server side pagination starts with 0
@@ -109,5 +111,14 @@ export class ApplicationService {
       { params: params }
     )
   }
+
+  getApplicationStatusesByType(type) {
+    let params = new HttpParams();
+    params = params.append('type', type);
+    return this.http.get<any>(this.GET_APPLICATION_STATUSES_BY_TYPE,
+      { params: params }
+    )
+  }
+
 
 }

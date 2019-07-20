@@ -21,4 +21,6 @@
   </div>
 </div>
 
-<shared-application-profile [application]="application"></shared-application-profile>
+<div *ngIf="application">
+  <shared-application-profile [application]="application"></shared-application-profile>
+</div>
