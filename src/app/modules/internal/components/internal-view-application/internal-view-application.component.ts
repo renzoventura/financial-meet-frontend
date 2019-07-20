@@ -47,7 +47,7 @@ export class InternalViewApplicationComponent implements OnInit {
           this.ngOnInit();
         },
         err => {
-          alert("Cannot remove agent");
+          alert(err.error);
         }
       )
   }
@@ -55,7 +55,6 @@ export class InternalViewApplicationComponent implements OnInit {
   assignAgentToApplication(currentApplication, agentId) {
     this.applicationService.assignAgentToApplication(currentApplication.id, agentId).subscribe(
       res => {
-        console.log('asdasd')
         this.ngOnInit();
       },
       err => {
