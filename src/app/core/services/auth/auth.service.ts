@@ -75,7 +75,7 @@ export class AuthService {
   }
 
   getAllAgents(firstName, lastName, suburb, page, size,) {
-    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let minusOnePage = String(page); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('firstName', firstName);
     params = params.append('lastName', lastName);

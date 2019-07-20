@@ -27,7 +27,7 @@ export class ApplicationService {
 
 
   getUserApplication(title, page, size, order, type, subType) {
-    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let minusOnePage = String(page); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
@@ -41,7 +41,7 @@ export class ApplicationService {
   }
 
   getAgentApplication(title, page, size, order, type, subType) {
-    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let minusOnePage = String(page); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
@@ -61,7 +61,7 @@ export class ApplicationService {
   }
 
   getAllApplications(title, page, size, order, type, subType) {
-    let minusOnePage = String(page - 1); //since server side pagination starts with 0
+    let minusOnePage = String(page); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('title', title);
     params = params.append('page', minusOnePage);
