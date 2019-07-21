@@ -123,7 +123,7 @@ export class DialogOverviewExampleDialog {
       this.config.currentPage = event
     }
     // console.log(this.searchFilter.suburb)
-    this.authServer.getAllAgents(this.firstName, this.lastName, this.suburb, this.config.currentPage, this.config.itemsPerPage).subscribe(
+    this.authServer.getAllAgents(this.firstName, this.lastName, this.suburb, this.application.subType, this.config.currentPage, this.config.itemsPerPage).subscribe(
       res => {
         this.users = res.content
         this.config.totalItems = res.totalElements

@@ -7,23 +7,25 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class ApplicationService {
 
   constructor(private http: HttpClient) { }
+  //SERVER = "http://ec2-52-64-154-235.ap-southeast-2.compute.amazonaws.com:8080/";
 
-  SERVER_APPLICATION_URL = 'http://localhost:8080/application'
-  //SERVER_APPLICATION_URL = "http://ec2-52-64-154-235.ap-southeast-2.compute.amazonaws.com:8080/application";
-
+  SERVER = 'http://localhost:8080/'
+  SERVER_APPLICATION_URL = this.SERVER + 'application';
+  SERVER_APPLICATION_TYPE_URL = this.SERVER + 'application-types'
+  SERVER_APPLICATION_SUB_TYPE_URL = this.SERVER + 'application-sub-types'
+  SERVER_APPLICATION_STATUSES = this.SERVER + 'status'
 
   GET_APPLICATION_BY_USER = this.SERVER_APPLICATION_URL + "/u/current/"
   GET_APPLICATION_BY_AGENT = this.SERVER_APPLICATION_URL + "/a/current"
   GET_ALL_APPLICATION = this.SERVER_APPLICATION_URL + "/i/all"
   PROGRESS_APPLICATION = this.SERVER_APPLICATION_URL + "/progress"
-
   CREATE_APPLICATION__URL = this.SERVER_APPLICATION_URL + "/create"
 
-  GET_APPLICATION_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-types/title"
+  GET_APPLICATION_TYPES_TITLES = this.SERVER_APPLICATION_TYPE_URL + "/title"
 
-  GET_APPLICATION_SUB_TYPES_TITLES = this.SERVER_APPLICATION_URL + "-sub-types/title"
+  GET_APPLICATION_SUB_TYPES_TITLES = this.SERVER_APPLICATION_SUB_TYPE_URL + "/title"
 
-  GET_APPLICATION_STATUSES_BY_TYPE = "http://localhost:8080/status/application-type"
+  GET_APPLICATION_STATUSES_BY_TYPE = this.SERVER_APPLICATION_STATUSES + "/application-type"
 
 
   getUserApplication(title, page, size, order, type, subType) {
@@ -120,5 +122,8 @@ export class ApplicationService {
     )
   }
 
+  getAllApplicationSubTypeCodes() {
+    return this.http.get<any>(this.SERVER_APPLICATION_SUB_TYPE_URL)
+  }
 
 }

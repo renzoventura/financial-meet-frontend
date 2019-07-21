@@ -74,12 +74,13 @@ export class AuthService {
     return this.http.get<any>(this.GET_USERS_URL)
   }
 
-  getAllAgents(firstName, lastName, suburb, page, size,) {
+  getAllAgents(firstName, lastName, suburb, specialization, page, size,) {
     let minusOnePage = String(page); //since server side pagination starts with 0
     let params = new HttpParams();
     params = params.append('firstName', firstName);
     params = params.append('lastName', lastName);
     params = params.append('suburb', suburb);
+    params = params.append('subType', specialization);
     params = params.append('page', minusOnePage);
     params = params.append('size', size);
     return this.http.get<any>(this.GET_AGENT_URL,

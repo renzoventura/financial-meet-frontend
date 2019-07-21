@@ -33,7 +33,17 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
+                </div>
 
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-user">
+                        <mat-label>Specialization</mat-label>
+                        <mat-select [(ngModel)]="specialization" name="specialization" (selectionChange)="getAgents(null)">
+                            <mat-option *ngFor="let specialization of specializations" [value]="specialization">
+                                {{ specialization }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
 
             </div>
