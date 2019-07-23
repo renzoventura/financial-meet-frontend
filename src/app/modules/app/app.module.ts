@@ -21,12 +21,14 @@ import { MatCardModule } from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
+import { VerificationPageComponent } from './components/verification-page/verification-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    VerificationPageComponent
   ],
   imports: [
     BrowserModule,

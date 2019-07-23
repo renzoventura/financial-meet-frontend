@@ -1,0 +1,42 @@
+<div class="image">
+  <mat-card class="box-wrapper">
+    <div class="logo-wrapper container">
+      <img class="logo" src="/assets/images/logo.png">
+      <p class="logo-footer">Finding you High Quality Advisers</p>
+      <div *ngIf="accountVerified == true">
+        <img class="success-icon" src="/assets/images/success.png">
+
+        <div class="information-container">
+          <div>
+            Congratulations! your account
+          </div>
+          <div class="email">
+            Email: {{ email }}
+          </div>
+          <div class="email">
+            Username: {{ username }}
+          </div>
+          <div>
+            is now verified!
+          </div>
+
+          <button type="submit" class="redirect-login" routerLinkActive="active" routerLink="/login" mat-button>Go to
+            login page</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="accountVerified == false">
+      <div class="information-container">
+        Oh no something went wrong!
+      </div>
+
+      <button type="submit" class="redirect-login" routerLinkActive="active" routerLink="/login" mat-button>Go to login
+        page</button>
+    </div>
+
+
+  </mat-card>
+
+</div>

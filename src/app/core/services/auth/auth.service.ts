@@ -34,6 +34,8 @@ export class AuthService {
 
   GET_CURRENT_ACOUNT = this.SERVER_URL + "/account/me"
 
+  VERIFY_ACCOUNT = this.SERVER_URL + "/verify-account"
+
   ROLE_USER = "ROLE_USER"
   ROLE_AGENT = "ROLE_AGENT"
   ROLE_INTERNAL = "ROLE_INTERNAL"
@@ -97,6 +99,14 @@ export class AuthService {
 
   getCurrentAccountDetails() {
     return this.http.get<any>(this.GET_CURRENT_ACOUNT)
+  }
+
+  verifyAccount(token) {
+    let params = new HttpParams();
+    console.log("TOKEN",token)
+    params = params.append('token', token);
+    console.log(this.VERIFY_ACCOUNT);
+    return this.http.get<any>(this.VERIFY_ACCOUNT, { params: params })
   }
 
 }

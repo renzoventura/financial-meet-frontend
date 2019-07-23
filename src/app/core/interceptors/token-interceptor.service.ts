@@ -11,7 +11,8 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   intercept(req, next) {
     let authService = this.injector.get(AuthService)
-    let avoidUrl = [authService.REGISTER_USER_URL, authService.REGISTER_AGENT_URL, authService.REGISTER_INTERNAL_URL, authService.LOGIN_URL]
+    let avoidUrl = [authService.REGISTER_USER_URL, authService.REGISTER_AGENT_URL, authService.REGISTER_INTERNAL_URL, authService.LOGIN_URL
+    , authService.VERIFY_ACCOUNT]
     if (avoidUrl.includes(req.url)) {
       //console.log("this is auth: " + req.url)
       return next.handle(req)

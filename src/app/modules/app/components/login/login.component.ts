@@ -43,7 +43,12 @@ export class LoginComponent implements OnInit {
         }
       },
       err => {
-        this.error = "Account credentials are invalid";
+        console.log(err)
+        if (err.error == "Account is not verified") {
+          this.error = "Account is not verified";
+        } else {
+          this.error = "Account credentials are invalid";
+        }
       }
     )
   }
