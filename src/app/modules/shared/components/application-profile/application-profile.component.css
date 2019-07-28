@@ -1,23 +1,24 @@
 .application-profile-page {
     width: 80%;
     margin: 20px auto;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
     background-color: white;
     padding: 20px 20px 20px 20px;
     border-radius: 10px;
+    height: 700px;
 }
 
 .application-subType {
     font-size: 30px;
     border-radius: 10px;
     color: goldenrod;
-    font-family: Ubuntu;
+      font-family: "Open Sans", sans-serif;
 }
 
 .application-status {
     font-size: 30px;
     border-radius: 10px;
-    font-family: Ubuntu;
+      font-family: "Open Sans", sans-serif;
 }
 
 .application-not-found {
@@ -38,7 +39,6 @@
 }
 
 .progressbar {
-    margin-top: 15px;
     /* counter-reset: step;
     counter-increment: step 2015; */
 }
@@ -100,4 +100,62 @@
 .progressbar li.active+li:after {
     content: '';
     background-color: #f1c40f;
+}
+
+
+.application-type {
+    min-width: 25px;
+    font-weight: bold;
+
+}
+.title-footer {
+    font-size: 12px;
+}
+
+.assigned-agent-field {
+    float:right;
+    font-weight: bolder;
+}
+
+.assigned-agent-value{
+    float:right;
+    color:goldenrod;
+}
+
+.client-details-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: goldenrod;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.application-details-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: goldenrod;
+}
+
+.client-field {
+    float:left;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 2;
+
+}
+
+.client-value{
+    float:right;
+    font-weight: normal;
+}
+
+.client-details-container {
+}
+
+.progress-bar-title {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+
 }

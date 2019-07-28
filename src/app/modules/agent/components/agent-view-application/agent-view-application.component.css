@@ -34,3 +34,17 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+.client-field {
+    float:left;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 2;
+
+}
+
+.client-value{
+    float:right;
+    font-weight: normal;
+    color: goldenrod;
+}

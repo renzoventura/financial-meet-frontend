@@ -1,33 +1,25 @@
+<div *ngIf="application">
+        <shared-application-profile [application]="application"></shared-application-profile>
+    </div>
 <div class="wrapper">
     <div class="row">
-        <div class="col-sm">
 
-                <div class="assigned-agent-field">
-                        Status:
-                        <div class="assigned-agent-value">
-                                &nbsp;{{application?.status}}
-                          
-                        </div>
-                      </div>
-<!-- 
-            <div class="status-field">
+        <div class="col-sm text-left">
+            <!-- <div class="client-field">
                 Status:
-                
-            </div>
-            <div class="status-field-value">
+                <div class="client-value">
                     &nbsp;{{application?.status}}
-                </div> -->
+                </div>
+            </div> -->
 
         </div>
         <div class="col-sm text-right" *ngIf="!(application?.status == 'DONE')">
 
             <button class="text-right" mat-raised-button class="progress-button"
-                (click)="progressApplication()">Progress Application</button>
+                (click)="progressApplication()">Progress
+                Application</button>
 
         </div>
     </div>
 </div>
 
-<div *ngIf="application">
-    <shared-application-profile [application]="application"></shared-application-profile>
-</div>
