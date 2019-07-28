@@ -40,7 +40,7 @@ export class UserTableComponent implements OnInit {
     this.authServer.getAllAgents(this.firstName, this.lastName, this.suburb, this.specialization, this.config.currentPage, this.config.itemsPerPage,).subscribe(
       res => {
         this.users = res.content
-        this.config.totalItems = res.totalElements
+        this.config.totalItems = res.totalElements + 1
       }
     )
   }

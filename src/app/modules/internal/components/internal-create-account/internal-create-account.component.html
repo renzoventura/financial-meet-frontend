@@ -58,12 +58,11 @@
                             placeholder="Email" spellcheck="false" required>
                     </mat-form-field>
 
-                    <mat-form-field class="mat-form-field-application">
+                    <mat-form-field>
                         <mat-label>Specialization</mat-label>
-                        <mat-select [(ngModel)]="registerUserData.currentLoan" name="currentLoan">
-                            <mat-option *ngFor="let range of moneyRanges" [value]="range">
-                                {{ range }}
-                            </mat-option>
+                        <mat-select [(ngModel)]="registerUserData.specializations" name="currentLoan" multiple>
+                            <mat-option *ngFor="let specialization of specializations" [value]="specialization">
+                                {{specialization}}</mat-option>
                         </mat-select>
                     </mat-form-field>
 
