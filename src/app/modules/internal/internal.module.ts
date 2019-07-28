@@ -11,8 +11,9 @@ import { InternalViewApplicationsComponent } from './components/internal-view-ap
 import { InternalViewProfileComponent } from './components/internal-view-profile/internal-view-profile.component';
 import { InternalViewUsersComponent } from './components/internal-view-users/internal-view-users.component';
 import { InternalViewApplicationComponent, DialogOverviewExampleDialog } from './components/internal-view-application/internal-view-application.component';
-import { MatDialogModule, MatFormFieldModule, MatSelectModule, MatButtonModule, MatInputModule} from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatSelectModule, MatButtonModule, MatInputModule, MatCardModule} from '@angular/material';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { InternalCreateAccountComponent } from './components/internal-create-account/internal-create-account.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     InternalViewProfileComponent,
     InternalViewUsersComponent,
     InternalViewApplicationComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    InternalCreateAccountComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule
   ],
   entryComponents: [DialogOverviewExampleDialog]
 })
