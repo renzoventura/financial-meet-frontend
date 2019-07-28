@@ -8,7 +8,7 @@
 }
 
 .remove-button {
-    background-color: red;
+    background-color: black;
     color: white;
     font-family: Ubuntu;
 }
@@ -17,4 +17,26 @@
     background-color: goldenrod;
     color: white;
     font-family: Ubuntu;
+}
+
+
+.assigned-agent-field {
+    float:left;
+    font-weight: bolder;
+}
+
+.assigned-agent-value{
+    float:right;
+    color:goldenrod;
+}
+
+.assigned-agent-button {
+    float:right;
+    color:goldenrod;
+
+}
+
+.assigned-agent-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

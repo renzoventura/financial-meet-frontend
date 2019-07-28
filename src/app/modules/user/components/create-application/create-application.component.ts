@@ -37,8 +37,6 @@ export class CreateApplicationComponent implements OnInit {
 
   yesOrNo = ["Yes", "No"]
 
-
-
   constructor(private applicationService: ApplicationService,
     private router: Router, private _formBuilder: FormBuilder) { }
 

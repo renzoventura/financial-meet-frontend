@@ -86,12 +86,12 @@ button:focus {
 .finished-title {
     font-size: 250%;
     font-family: 'Open Sans', sans-serif;
-    color: white;
+    color: black;
 
 }
 
 .finished-title-footer {
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
-    color: white;
+    color: black;
 }

@@ -1,8 +1,22 @@
 <div class="wrapper">
     <div class="row">
-
         <div class="col-sm">
-            Status: {{application?.status}}
+
+                <div class="assigned-agent-field">
+                        Status:
+                        <div class="assigned-agent-value">
+                                &nbsp;{{application?.status}}
+                          
+                        </div>
+                      </div>
+<!-- 
+            <div class="status-field">
+                Status:
+                
+            </div>
+            <div class="status-field-value">
+                    &nbsp;{{application?.status}}
+                </div> -->
 
         </div>
         <div class="col-sm text-right" *ngIf="!(application?.status == 'DONE')">

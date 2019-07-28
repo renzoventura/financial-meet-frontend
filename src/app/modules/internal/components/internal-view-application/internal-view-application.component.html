@@ -11,10 +11,20 @@
   <div *ngIf="application?.agent">
     <div class="row">
       <div class="col-sm">
-        Assigned Agent: {{application.agent.firstName}} {{application.agent.lastName}}
+        <div class="assigned-agent-field">
+          Assigned Agent:
+          <div class="assigned-agent-value">
+              &nbsp;{{application.agent.firstName}} {{application.agent.lastName}}
+            <div class="assigned-agent-button" routerLinkActive="active"
+            routerLink="../../profile/{{application.agent.id}}">
+                &nbsp;[View Agent]
+              </div>
+          </div>
+        </div>
       </div>
+
       <div class="col-sm text-right">
-        <button class="text-right" mat-raised-button (click)="removeAgentFromApplication(application)"
+        <button class="remove-button" mat-raised-button (click)="removeAgentFromApplication(application)"
           color="warn">Remove Agent</button>
       </div>
     </div>

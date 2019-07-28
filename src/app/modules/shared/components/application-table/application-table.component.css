@@ -44,13 +44,27 @@ mat-form-field {
     font-size: 120%;
     vertical-align: middle;
 }
-.application-status {
-}
+
 
 .application-status-value {
-    color: green;
-    font-weight: bold;
+    color: goldenrod;
+    font-weight: 900;
     float: right;
+}
+
+.agent-field {
+    font-family: "Open Sans", sans-serif;
+    font-size: bolder;
+    font-weight: 900;
+    float:left;
+}
+
+.agent-name{
+    color: goldenrod;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+    float:right;
+
 }
 
 .card {
@@ -116,9 +130,57 @@ mat-form-field {
     background-color: goldenrod;
     text-align: center;
     margin:auto;
-    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-radius: 10px;
     color: white;
     font-weight: bolder;
     font-family: "Open Sans", sans-serif;
+}
+
+.application-type {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+}
+
+.application-layer {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.application-info-field {
+    font-weight: 900;
+    font-family: "Open Sans", sans-serif;
+
+    float:left;
+}
+
+.application-info-value {
+}
+
+.view-application-button:hover {
+    cursor: pointer;
+}
+
+.view-application-button:focus {
+    outline:0;
+}
+
+.agent-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.agent-name:focus {
+    cursor: pointer;
+    outline:0;
+}
+
+.agent-none{
+    color: goldenrod;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+    float:right;
 }

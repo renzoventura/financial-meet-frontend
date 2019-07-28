@@ -16,6 +16,15 @@
       Agent : Not Assigned
     </div>
 
+    {{ application?.annualIncome}}
+    {{ application?.overtimeBonus}}
+    {{ application?.rentalIncome}}
+    {{ application?.businessIncome}}
+    {{ application?.otherIncome}}
+    {{ application?.expectedLoan}}
+    {{ application?.loan}}
+    {{ application?.otherInformation}}
+
     <div *ngIf="application" class="progress-bar-wrapper">
       <ul class="progressbar">
         <li [class.active]="nodeIsActive(status)" *ngFor="let status of statuses">

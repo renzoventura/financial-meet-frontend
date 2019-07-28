@@ -37,7 +37,7 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Application Subtype</mat-label>
-                <mat-select (click)="test()" [(ngModel)]="applicationSubType" [ngModelOptions]="{standalone: true}">
+                <mat-select [(ngModel)]="applicationSubType" [ngModelOptions]="{standalone: true}">
                   <mat-option *ngFor="let subType of applicationSubTypes" [value]="subType">
                     {{ subType }}
                   </mat-option>
@@ -77,7 +77,7 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="newApplication.annualIncome" [ngModelOptions]="{standalone: true}" >
                   <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
@@ -96,7 +96,7 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="newApplication.overtimeBonus" [ngModelOptions]="{standalone: true}" >
                   <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
@@ -115,8 +115,8 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                <mat-select [(ngModel)]="newApplication.rentalIncome" [ngModelOptions]="{standalone: true}" >
+                    <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
                 </mat-select>
@@ -134,8 +134,8 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                <mat-select [(ngModel)]="newApplication.businessIncome" [ngModelOptions]="{standalone: true}" >
+                    <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
                 </mat-select>
@@ -153,8 +153,8 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                <mat-select [(ngModel)]="newApplication.otherIncome" [ngModelOptions]="{standalone: true}" >
+                    <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
                 </mat-select>
@@ -192,8 +192,8 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Amount</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                <mat-select [(ngModel)]="newApplication.expectedLoan" [ngModelOptions]="{standalone: true}" >
+                    <mat-option *ngFor="let range of moneyRanges" [value]="range">
                     {{ range }}
                   </mat-option>
                 </mat-select>
@@ -211,8 +211,8 @@
             <div class="col">
               <mat-form-field class="mat-form-field-application">
                 <mat-label>Yes or No</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let boolean of yesOrNo" [value]="boolean">
+                <mat-select [(ngModel)]="newApplication.loan" [ngModelOptions]="{standalone: true}" >
+                    <mat-option *ngFor="let boolean of yesOrNo" [value]="boolean">
                     {{ boolean }}
                   </mat-option>
                 </mat-select>
@@ -230,7 +230,7 @@
             </div>
             <div class="col">
               <mat-form-field>
-                <textarea [(ngModel)]="newApplication.title" [ngModelOptions]="{standalone: true}" name="title"
+                <textarea [(ngModel)]="newApplication.otherInformation" [ngModelOptions]="{standalone: true}" name="title"
                   class="details-form" matInput placeholder="Enter details here"></textarea>
                 <mat-hint align="start"><strong>Enter relevant information only</strong> </mat-hint>
               </mat-form-field>
