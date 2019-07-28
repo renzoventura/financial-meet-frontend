@@ -21,7 +21,7 @@
   }
   
   .logo-footer {
-    font-family: Ubuntu;
+    font-family: 'Open Sans', sans-serif;
     text-align: center
   }
   
@@ -32,16 +32,18 @@
     margin:auto;
     margin-top: 50px;
     min-width: 400px;
-    max-width: 500px;
+    max-width: 800px;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
   }
   
+  .information-column {
+    padding-right:5px;
+  }
   
   .mat-form-field {
-    width: 100%;
     min-width: 300px;
   }
   
@@ -55,25 +57,28 @@
     width: 300px;
     color: red;
     text-align: center;
-    font-family: ubuntu;
+    font-family: "Open Sans", san-serif;
     margin: auto;
   }
   
-  .sign-in {
-    margin-top: 10px;
-    font-family: Ubuntu;
-    font-weight: bold;
+  .create-account{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 10px;
+    font-family: "Open Sans", san-serif;
+    font-weight: bolder;
     letter-spacing: 3px;
     color: white;
     text-align: center;
     width: 100%;
     border-radius: 100px;
     background-color: #d2ac2d;
+
   }
   
   .sign-in-footer {
     margin-top: 5px;
-    font-family: Ubuntu;
+    font-family: "Open Sans", san-serif;
     text-align: center;
     border-radius: 100px;
     width: 100%;
@@ -85,14 +90,14 @@
   }
   
   .sign-up-footer {
-    font-family: Ubuntu;
+    font-family: "Open Sans", san-serif;
     text-align: center;
     width: 100%;
     color: gray;
   }
   
   .sign-up {
-    font-family: Ubuntu;
+    font-family: "Open Sans", san-serif;
     font-weight: bold;
     letter-spacing: 3px;
     color: white;
@@ -103,7 +108,7 @@
   }
   
   .card-footer {
-    font-family: Ubuntu;
+    font-family: "Open Sans", san-serif;
     text-align: center;
     width: 100%;
     color: gray;
@@ -111,7 +116,7 @@
   }
   
   mat-form-field {
-    font-family: Ubuntu;
+    font-family: "Open Sans", san-serif;
   }
   
   button:focus {

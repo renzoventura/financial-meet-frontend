@@ -40,17 +40,17 @@ export class RegisterComponent implements OnInit {
   register() {
     if (!(this.registerUserData.username == null || this.registerUserData.password == null || this.confirmPassword == null)) {
       if (this.registerUserData.password == this.confirmPassword) {
-        switch (this.userType) {
-          case "USER": this.registerUser()
-            break;
-          case "AGENT": this.registerAgent()
-            break;
-          default: {
-            this.error = "Please select User Type"
-            break;
-          }
-        }
-
+        this.registerUser();
+        // switch (this.userType) {
+        //   case "USER": this.registerUser()
+        //     break;
+        //   case "AGENT": this.registerAgent()
+        //     break;
+        //   default: {
+        //     this.error = "Please select User Type"
+        //     break;
+        //   }
+        // }
       } else {
         this.error = "Passwords should match"
       }

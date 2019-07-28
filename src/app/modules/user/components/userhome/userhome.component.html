@@ -1,59 +1,59 @@
 <div class="page">
 
     <div class="welcome-message">
-        Hello user!
+        HI {{ currentAccount.firstName }},
     </div>
     <div class="welcome-message-footer">
         Make sure your details are always up to Date!
     </div>
     <div class="button-wrapper">
-        <button type="submit" class="important-button" mat-button>Why it's important</button>
+        <button type="submit" class="important-button" mat-button>Why it's Important</button>
         <button type="submit" class="edit-profile-button" mat-button>Edit Profile</button>
     </div>
     <div class="container table-user-info">
         <div class="row border-between">
             <div class="col">
-                <div>First Name: </div>
+                <div class="user-info-field">First Name: </div>
                 <div class="user-info">{{currentAccount.firstName || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>Suburb:</div>
+                <div class="user-info-field">Suburb:</div>
                 <div class="user-info">{{currentAccount.suburb || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
-                <div>Last Name:</div>
+                <div class="user-info-field">Last Name:</div>
                 <div class="user-info">{{currentAccount.lastName || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>User Id:</div>
+                <div class="user-info-field">User Id:</div>
                 <div class="user-info">{{currentAccount.id || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
-                <div>Phone:</div>
+                <div class="user-info-field">Phone:</div>
                 <div class="user-info">{{currentAccount.phoneNumber || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>Email Address:</div>
+                <div class="user-info-field">Email Address:</div>
                 <div class="user-info">{{currentAccount.email || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
-                <div>Mobile:</div>
+                <div class="user-info-field">Mobile:</div>
                 <div class="user-info">{{currentAccount.mobile || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>Current Loan</div>
+                <div class="user-info-field">Current Loan</div>
                 <div class="user-info">{{currentAccount.currentLoan || "EMPTY"}}</div>
             </div>
             <div class="w-100"></div>
             <div class="col">
-                <div>Occupation:</div>
+                <div class="user-info-field">Occupation:</div>
                 <div class="user-info">{{currentAccount.occupation || "EMPTY"}}</div>
             </div>
             <div class="col">
-                <div>Annual Income:</div>
+                <div class="user-info-field">Annual Income:</div>
                 <div class="user-info">{{currentAccount.annualIncome || "EMPTY"}}</div>
             </div>
         </div>

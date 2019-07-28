@@ -5,7 +5,7 @@
 .data-table-page {
     width: 80%;
     margin: 20px auto;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
 }
 
 .search-bar {
@@ -23,7 +23,7 @@
 }
 
 .search-button {
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
     width: 5%;
     min-width: 80px;
     border-radius: 100px;
@@ -33,34 +33,24 @@
 }
 
 mat-form-field {
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
 }
 
-mat-slide-toggle {
-    margin: auto;
-    height: 50%;
-    font-family: Ubuntu;
-    font-size: 120%;
-    vertical-align: middle;
-    
-
-}
 
 .slider {
     margin: auto;
     width: 50%;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
     font-size: 120%;
     vertical-align: middle;
 }
 .application-status {
-    display: inherit;
 }
 
 .application-status-value {
-    margin-left: 5px;
     color: green;
     font-weight: bold;
+    float: right;
 }
 
 .card {
@@ -70,19 +60,19 @@ mat-slide-toggle {
 .assign-button {
     background-color: black;
     color: white;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
 }
 
 .remove-button {
     background-color: red;
     color: white;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
 }
 
 .progress-button {
     background-color: green;
     color: white;
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
 }
 
 .assign-agent-input {
@@ -93,7 +83,7 @@ mat-slide-toggle {
 
 
 .search-button {
-    font-family: Ubuntu;
+    font-family: "Open Sans", sans-serif;
     width: 15%;
     min-width: 160px;
     border-radius: 100px;
@@ -102,4 +92,33 @@ mat-slide-toggle {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.mat-form-field-application {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+
+}
+
+.application-body {
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.span-row-2{grid-row: span 2 / auto;}
+
+.view-application-button {
+    background-color: goldenrod;
+    text-align: center;
+    margin:auto;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    font-family: "Open Sans", sans-serif;
 }

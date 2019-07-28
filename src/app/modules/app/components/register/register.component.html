@@ -7,17 +7,16 @@
 
     <mat-card-content>
       <form>
-        <mat-form-field>
+        <!-- <mat-form-field>
           <mat-label>USER or AGENT?</mat-label>
           <mat-select [(ngModel)]="userType" name="userType" matNativeControl required>
             <mat-option value="USER">USER</mat-option>
             <mat-option value="AGENT">AGENT</mat-option>
           </mat-select>
-        </mat-form-field>
-        <div class="row">
-          <div class="col-sm">
+        </mat-form-field> -->
+        <div class="row"><div class="col information-column">
             <mat-form-field>
-              <input type="text" [(ngModel)]="registerUserData.username" name="username" matInput placeholder="username"
+              <input type="text" [(ngModel)]="registerUserData.username" name="username" matInput placeholder="Username"
                 spellcheck="false" required>
             </mat-form-field>
 
@@ -39,19 +38,14 @@
               <input type="text" [(ngModel)]="registerUserData.lastName" name="Last Name" matInput
                 placeholder="Last Name" spellcheck="false" required>
             </mat-form-field>
-
             <mat-form-field>
-              <input type="number" [(ngModel)]="registerUserData.phoneNumber" name="PhoneNumber" matInput
-                placeholder="Phone Number" spellcheck="false" required>
-            </mat-form-field>
-
-            <mat-form-field>
-              <input type="number" [(ngModel)]="registerUserData.mobile" name="Mobile" matInput placeholder="Mobile"
-                spellcheck="false" required>
-            </mat-form-field>
-
+                <input type="number" [(ngModel)]="registerUserData.mobile" name="Mobile" matInput placeholder="Mobile"
+                  spellcheck="false" required>
+              </mat-form-field>
+          </div>
+          <div class="col">
             <mat-form-field class="mat-form-field-application">
-              <mat-label>Order</mat-label>
+              <mat-label>Suburbs</mat-label>
               <mat-select [(ngModel)]="registerUserData.suburb" name="suburb">
                 <mat-option *ngFor="let suburb of suburbs" [value]="suburb">
                   {{ suburb }}
@@ -95,7 +89,7 @@
         <div *ngIf="error" class="error">
           {{ error }}
         </div>
-        <button type="submit" class="sign-in" (click)="register()" mat-button>REGISTER</button>
+        <button type="submit" class="create-account" (click)="register()" mat-button>REGISTER</button>
         <div>
           <a class="card-footer" mat-button>Back to Fynco Homepage</a>
           <a class="card-footer" routerLinkActive="active" routerLink="../login" mat-button>Back to Login</a>

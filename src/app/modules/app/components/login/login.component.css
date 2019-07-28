@@ -21,7 +21,7 @@
 }
 
 .logo-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center
 }
 
@@ -53,7 +53,7 @@ mat-card-title, mat-card-content {
 
 .sign-in {
   margin-top: 10px;
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
   color: white;
@@ -65,7 +65,7 @@ mat-card-title, mat-card-content {
 
 .sign-in-footer {
   margin-top: 5px;
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   border-radius: 100px;
   width: 100%;
@@ -73,18 +73,19 @@ mat-card-title, mat-card-content {
 }
 
 .sign-up-wrapper {
+  margin-top: 5%;
   margin-bottom: 10%;
 }
 
 .sign-up-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   width: 100%;
   color: gray;
 }
 
 .sign-up {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
   color: white;
@@ -95,7 +96,7 @@ mat-card-title, mat-card-content {
 }
 
 .card-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   width: 100%;
   color: gray;
@@ -103,7 +104,7 @@ mat-card-title, mat-card-content {
 }
 
 mat-form-field {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
 }
 
 button:focus {

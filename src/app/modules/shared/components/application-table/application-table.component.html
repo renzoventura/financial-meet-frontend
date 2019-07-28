@@ -2,29 +2,22 @@
 
     <div class="search-bar">
         <form>
-
-
             <div class="row">
                 <div class="col-sm">
                     <mat-form-field>
                         <input type="text" [(ngModel)]="title" name="title" matInput placeholder="Title"
                             spellcheck="false">
                     </mat-form-field>
-                </div>
-                <div class="col-sm">
+
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Date order</mat-label>
-                        <mat-select [(ngModel)]="dateOrder" name="dateOrder" 
-                        (selectionChange)="getApplication()">
+                        <mat-select [(ngModel)]="dateOrder" name="dateOrder" (selectionChange)="getApplication()">
                             <mat-option *ngFor="let dateOrder of dateOrders" [value]="dateOrder">
                                 {{ dateOrder }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
 
-                </div>
-
-                <div class="col-sm">
                     <mat-form-field class="mat-form-field-application">
                         <mat-label>Type</mat-label>
                         <mat-select [(ngModel)]="applicationType" [ngModelOptions]="{standalone: true}"
@@ -34,27 +27,20 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                </div>
-                <div class="col-sm">
+
                     <mat-form-field class="mat-form-field-application">
-                        <mat-label>Sub type</mat-label>
-                        <mat-select [(ngModel)]="applicationSubType"
-                            [ngModelOptions]="{standalone: true}"
-                            (selectionChange)="getApplication()">
-                            <mat-option *ngFor="let subType of applicationSubTypes" [value]="subType">
-                                {{ subType }}
+                        <mat-label>Type</mat-label>
+                        <mat-select [(ngModel)]="applicationType" [ngModelOptions]="{standalone: true}"
+                            (selectionChange)="resetSubType(); getApplication()">
+                            <mat-option *ngFor="let type of applicationTypes" [value]="type">
+                                {{ type }}
                             </mat-option>
                         </mat-select>
-                        <mat-error *ngIf="applicationSubTypeError">
-                            Select Application Type First
-                        </mat-error>
                     </mat-form-field>
+
+                    <button (click)="getApplication(null)" class="search-button" mat-button>Search</button>
                 </div>
             </div>
-            <div class="col-sm"> 
-                <button (click)="getApplication(null)" class="search-button" mat-button>Search</button>
-            </div>
-
         </form>
     </div>
     <div>
@@ -67,48 +53,67 @@
             <div class="card-body" routerLinkActive="active" routerLink="../application/{{application.id}}">
                 <div class="row">
                     <div class="col-sm">
-                        Unique ID: #{{application.id}}
+                        {{application.type}} Application: {{application.subType}}
                     </div>
-                    <div class="col-sm">
-                        Date Created:
-                        {{application.dateCreated}}
-                    </div>
-                    <div class="col-sm application-status">
+
+                    <div class="col-sm application-status text-right">
                         Status:
-                        <p class="application-status-value"> {{application.status}} </p>
+                        <div class="application-status-value"> {{application.status}} </div>
                     </div>
                 </div>
+            </div>
+
+
+            <div class="card-footer">
+                    <div class="grid">
+                            <div>
+                                Client: {{application.owner.firstName}} {{application.owner.lastName}}
+                            </div>
+                            <div>
+                                Contact No: {{application.owner.mobile}}
+                            </div>
+                            <div class="span-row-2 view-application-button">
+                                View Application
+                            </div>
+                            <div>
+                                Suburb: {{application.owner.suburb}}
+                            </div>
+                            <div>
+                                Email: {{application.owner.email}}
+                            </div>
+                          </div>
+
+            </div>
+
+
+            <div>
                 <div class="row">
                     <div class="col-sm">
-                        {{application.type}} 
-                    </div>
-                    <div class="col-sm">
-                        {{application.subType}}
-                    </div>
-                    <div class="col-sm"></div>
-                </div>
-
-                <div class="card-text" *ngIf="isInternal || isAgent">
-                    <div class="row">
-                        <div class="col-sm">
-                            Client: {{application.owner.firstName}} {{application.owner.lastName}}
+                        <div *ngIf="application.agent">
+                            <div class="row">
+                                <div class="col-sm" routerLinkActive="active"
+                                    routerLink="../profile/{{application.agent.id}}">
+                                    <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}}
+                                        {{application.agent.lastName}} </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+
             </div>
-            <div class="card-footer">
-                <div *ngIf="application.agent">
 
-
-
-                    <div class="row">
-                        <div class="col-sm" routerLinkActive="active" routerLink="../profile/{{application.agent.id}}">
-                            <p class="card-text text-primary">Agent assigned: {{application.agent.firstName}}
-                                {{application.agent.lastName}} </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
