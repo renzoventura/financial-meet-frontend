@@ -1,3 +1,100 @@
-<p>
-  register works!
-</p>
+<div class="image">
+  <mat-card class="login-box">
+    <div class="logo-wrapper container">
+      <img class="logo" src="/assets/images/logo.png">
+      <p class="logo-footer">Finding you High Quality Advisers</p>
+    </div>
+
+    <mat-card-content>
+      <form>
+        <!-- <mat-form-field>
+          <mat-label>USER or AGENT?</mat-label>
+          <mat-select [(ngModel)]="userType" name="userType" matNativeControl required>
+            <mat-option value="USER">USER</mat-option>
+            <mat-option value="AGENT">AGENT</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <div class="row"><div class="col information-column">
+            <mat-form-field>
+              <input type="text" [(ngModel)]="registerUserData.username" name="username" matInput placeholder="Username"
+                spellcheck="false" required>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="password" [(ngModel)]="registerUserData.password" name="password" matInput
+                placeholder="Password" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" [(ngModel)]="confirmPassword" name="password" matInput
+                placeholder="Confirm Password" required>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="text" [(ngModel)]="registerUserData.firstName" name="First Name" matInput
+                placeholder="First Name" spellcheck="false" required>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="text" [(ngModel)]="registerUserData.lastName" name="Last Name" matInput
+                placeholder="Last Name" spellcheck="false" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" [(ngModel)]="registerUserData.mobile" name="Mobile" matInput placeholder="Mobile"
+                  spellcheck="false" required>
+              </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="mat-form-field-application">
+              <mat-label>Suburbs</mat-label>
+              <mat-select [(ngModel)]="registerUserData.suburb" name="suburb">
+                <mat-option *ngFor="let suburb of suburbs" [value]="suburb">
+                  {{ suburb }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="email" [(ngModel)]="registerUserData.email" name="email" matInput placeholder="Email"
+                spellcheck="false" required>
+            </mat-form-field>
+
+
+            <mat-form-field class="mat-form-field-application">
+              <mat-label>Annual Income</mat-label>
+              <mat-select [(ngModel)]="registerUserData.annualIncome" name="annualIncome">
+                <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                  {{ range }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field class="mat-form-field-application">
+              <mat-label>Current Loan</mat-label>
+              <mat-select [(ngModel)]="registerUserData.currentLoan" name="currentLoan">
+                <mat-option *ngFor="let range of moneyRanges" [value]="range">
+                  {{ range }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <input type="text" [(ngModel)]="registerUserData.occupation" name="occupation" matInput
+                placeholder="Occupation" spellcheck="false" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="error">
+          {{ error }}
+        </div>
+        <button type="submit" class="create-account" (click)="register()" mat-button>REGISTER</button>
+        <div>
+          <a class="card-footer" mat-button>Back to Fynco Homepage</a>
+          <a class="card-footer" routerLinkActive="active" routerLink="../login" mat-button>Back to Login</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

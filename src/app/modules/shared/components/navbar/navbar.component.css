@@ -9,17 +9,24 @@
 
 .sidenav a {
   color: white;
-  font-family: ubuntu;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .sidenav mat-toolbar {
   color: white;
-  font-family: ubuntu;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
+
+.list-container {
+  margin-top:20%;
+}
+
 
 .mat-toolbar.mat-primary {
   position: sticky;
@@ -28,13 +35,16 @@
 }
 
 .nav-logo {
-  padding-left: 10px;
-  height: 35px;
-  width: 95px;
+  height: auto;
+  width: 50%;
+  max-width: 120px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: auto;
 }
 
 .slogan {
-  font-family: ubuntu;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
 }
 
@@ -42,4 +52,22 @@
   /* This fills the remaining space, by using flexbox. 
      Every toolbar row uses a flexbox row layout. */
   flex: 1 1 0;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.home-button {
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
+.home-button:focus {
+  outline: none !important;
+}
+
+.home-button:hover {
+  cursor: pointer;
 }

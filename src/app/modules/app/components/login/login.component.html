@@ -1,14 +1,14 @@
 <div class="image">
   <mat-card class="login-box">
     <div class="logo-wrapper container">
-      <img class="logo" src="../../../../../assets/images/Fynco_logo.png">
+      <img class="logo" src="/assets/images/logo.png">
       <p class="logo-footer">Finding you High Quality Advisers</p>
     </div>
 
     <mat-card-content>
       <form>
         <mat-form-field>
-          <input type="text" [(ngModel)]="loginUserData.username" name="email" matInput placeholder="Email"
+          <input type="text" [(ngModel)]="loginUserData.username" name="email" matInput placeholder="Username"
             spellcheck="false" required>
         </mat-form-field>
 
@@ -30,7 +30,7 @@
 
         <div class="sign-up-wrapper">
           <p class="sign-up-footer">New to Fynco? Sign Up! It's Free</p>
-          <button class="sign-up" mat-button>SIGN UP</button>
+          <button class="sign-up" routerLinkActive="active" routerLink="../register" mat-button>SIGN UP</button>
         </div>
 
         <div>

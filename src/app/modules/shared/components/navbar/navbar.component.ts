@@ -25,14 +25,12 @@ export class NavbarComponent {
   isInternalSideBar = false;
 
   ngOnInit() {
-    console.log("LOADING SIDE BAR");
     if (!!localStorage.getItem(this.authServer.TOKEN)) {
       this.loadSidebarBasedOnRole()
     }
   }
 
   loadSidebarBasedOnRole() {
-    console.log("asdasdasdasdsa");
     this.authServer.getUserNameAndRole().subscribe(
       res => {
        switch (res.roles[0]) {

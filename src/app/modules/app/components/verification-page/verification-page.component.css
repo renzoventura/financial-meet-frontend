@@ -1,0 +1,74 @@
+.image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("src\assets\images\login-background.jpg");
+    overflow: auto;
+}
+
+.box-wrapper {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    border-radius: 2%;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    min-width: 400px;
+    max-width: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.logo {
+    padding: 5px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.logo-footer {
+    font-family: Ubuntu;
+    text-align: center
+}
+
+.logo-wrapper {
+    margin-bottom: 5%;
+}
+
+.success-icon {
+    max-width: 150px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.information-container {
+    font-family: Ubuntu;
+    text-align: center
+}
+
+.email {
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+  
+.redirect-login {
+    margin-top: 10px;
+    font-family: Ubuntu;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    border-radius: 100px;
+    background-color: #d2ac2d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

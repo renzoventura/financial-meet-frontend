@@ -29,8 +29,7 @@ export class InternalGuard {
         }
       },
       err => {
-        console.log("Session finished")
-        console.log(err)
+        alert("Session is finished")
         this.router.navigate([this.loginUrl])
         this.isInternal = false;
       }

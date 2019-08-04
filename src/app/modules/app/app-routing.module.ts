@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InternalhomeComponent } from '../internal/components/internalhome/internalhome.component';
-import { InternalGuard } from '../../core/guards/internal.guard';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { VerificationPageComponent } from './components/verification-page/verification-page.component';
 
 const routes: Routes = [
   { 
     path: '',
     redirectTo: 'login',
     pathMatch: 'full' 
-  },
-  {
-    path: 'internal',
-    component: InternalhomeComponent,
-    canActivate: [InternalGuard]
   },
   {
     path: 'login',
@@ -24,6 +18,10 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
+  {
+    path: 'verify/:token',
+    component: VerificationPageComponent
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,50 @@
+.wrapper {
+    width: 80%;
+    margin: 20px auto;
+    font-family:"Open Sans", sans-serif;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+
+.progress-button {
+    background-color: green;
+    color: white;
+    font-family:"Open Sans", sans-serif;
+}
+
+.status-field {
+    float:left;
+    font-weight: bolder;
+}
+
+.assigned-agent-value{
+    float:right;
+    color:goldenrod;
+}
+
+.assigned-agent-button {
+    float:right;
+    color:goldenrod;
+
+}
+
+.assigned-agent-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.client-field {
+    float:left;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 2;
+
+}
+
+.client-value{
+    float:right;
+    font-weight: normal;
+    color: goldenrod;
+}

@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule,  MatSelectModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule } from '@angular/material';
+import { ApplicationTableComponent } from './components/application-table/application-table.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AgentProfileComponent } from './components/agent-profile/agent-profile.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
+import { ApplicationProfileComponent } from './components/application-profile/application-profile.component';
 
 @NgModule({
   declarations: [
-    SidebarComponent,
     NavbarComponent,
+    ApplicationTableComponent,
+    AgentProfileComponent,
+    UserTableComponent,
+    ApplicationProfileComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +31,14 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    NgxPaginationModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatSlideToggleModule
   ],
-  exports: [SidebarComponent, NavbarComponent] 
+  exports: [NavbarComponent, ApplicationTableComponent, AgentProfileComponent, UserTableComponent, ApplicationProfileComponent]
 })
 export class SharedModule { }

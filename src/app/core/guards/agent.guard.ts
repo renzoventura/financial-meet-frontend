@@ -29,8 +29,7 @@ export class AgentGuard {
         }
       },
       err => {
-        console.log("Session finished")
-        console.log(err)
+        alert("Session is finished")
         this.router.navigate([this.loginUrl])
         this.isAgent = false;
       }

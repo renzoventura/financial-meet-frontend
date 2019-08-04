@@ -2,8 +2,10 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-image: url("src\assets\images\login-background.jpg");
+  overflow: auto;
 }
 
 .logo-wrapper {
@@ -19,18 +21,20 @@
 }
 
 .logo-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center
 }
 
 .login-box {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
-  margin: auto;
-  margin-top: 5%;
-  margin-left: 35%;
-  margin-right: 35%;
+  display: block;
+  margin:auto;
+  margin-top: 150px;
+  min-width: 400px;
+  max-width: 500px;
 }
+
 
 .mat-form-field {
   width: 100%;
@@ -43,15 +47,13 @@ mat-card-title, mat-card-content {
 }
 
 .error {
-  padding: 16px;
-  width: 300px;
-  color: white;
-  background-color: red;
+  text-align: center;
+  color: red;
 }
 
 .sign-in {
   margin-top: 10px;
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
   color: white;
@@ -63,7 +65,7 @@ mat-card-title, mat-card-content {
 
 .sign-in-footer {
   margin-top: 5px;
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   border-radius: 100px;
   width: 100%;
@@ -71,19 +73,19 @@ mat-card-title, mat-card-content {
 }
 
 .sign-up-wrapper {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 10%;
 }
 
 .sign-up-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   width: 100%;
   color: gray;
 }
 
 .sign-up {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
   color: white;
@@ -94,7 +96,7 @@ mat-card-title, mat-card-content {
 }
 
 .card-footer {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   width: 100%;
   color: gray;
@@ -102,9 +104,10 @@ mat-card-title, mat-card-content {
 }
 
 mat-form-field {
-  font-family: Ubuntu;
+  font-family: "Open Sans", sans-serif;
 }
 
 button:focus {
   outline: 0;
 }
+

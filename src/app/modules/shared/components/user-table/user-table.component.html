@@ -1,0 +1,82 @@
+<div class="data-table-page">
+
+    <div class="search-bar">
+        <form>
+
+
+            <div class="row">
+                <div class="col-sm">
+                    <mat-form-field>
+                        <input type="text" [(ngModel)]="firstName" name="firstName" matInput
+                            placeholder="First Name" spellcheck="false">
+                    </mat-form-field>
+
+                    <i (click)="getAgents(null)" class="material-icons">
+                        search
+                    </i>
+                </div>
+                <div class="col-sm">
+                    <mat-form-field>
+                        <input type="text" [(ngModel)]="lastName" name="lastName" matInput
+                            placeholder="Last Name" spellcheck="false">
+                    </mat-form-field>
+                    <i (click)="getAgents(null)" class="material-icons">
+                            search
+                        </i>
+                </div>
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-user">
+                        <mat-label>Suburb</mat-label>
+                        <mat-select [(ngModel)]="suburb" name="suburb" (selectionChange)="getAgents(null)">
+                            <mat-option *ngFor="let suburb of suburbs" [value]="suburb">
+                                {{ suburb }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm">
+                    <mat-form-field class="mat-form-field-user">
+                        <mat-label>Specialization</mat-label>
+                        <mat-select [(ngModel)]="specialization" name="specialization" (selectionChange)="getAgents(null)">
+                            <mat-option *ngFor="let specialization of specializations" [value]="specialization">
+                                {{ specialization }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <button (click)="getAgents(null)" style="display: none"> </button>
+
+        </form>
+    </div>
+
+
+    <div>
+        <div class="pagination-container">
+            <pagination-controls class="pagination" (pageChange)="getAgents($event)"></pagination-controls>
+        </div>
+
+        <div class="card user-layer" *ngFor="let user of users | paginate: config;">
+            <div class="card-body" routerLinkActive="active" routerLink="../profile/{{user?.id}}">
+                <div class="row">
+                    <div class="col-sm">
+                        #{{user?.id}} {{user?.firstName}} {{user?.lastName}}
+                    </div>
+                    <div class="col-sm">
+                        {{user?.suburb}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                {{user?.email}}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

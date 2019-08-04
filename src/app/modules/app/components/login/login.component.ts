@@ -12,38 +12,42 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    localStorage.removeItem('token');
   }
   
   loginUserData = {}
 
+  error: String;
+
   login() {
-    console.log("Loggin in...");
-    console.log(this.loginUserData);
     return this.authService.login(this.loginUserData).subscribe(
       res => {
-        console.log("Login success");
         localStorage.setItem("token", res.token);
-        console.log(res.roles);
         switch (res.roles[0]) {
           case this.authService.ROLE_USER: {
-            console.log("Login as User");
             this.router.navigate(["/u"])
             break;
           }
           case this.authService.ROLE_AGENT: {
-            console.log("Login as Agent");
             this.router.navigate(["/a"])
             break;
           }
           case this.authService.ROLE_INTERNAL: {
-            console.log("Login as Internal");
-            this.router.navigate(["/i"])
+            this.router.navigate(["/i/applications"])
             break;
           }
           default: {
-            console.log("Invalid choice");
+            //console.log("Invalid choice");
             break;
           }
+        }
+      },
+      err => {
+        console.log(err)
+        if (err.error == "Account is not verified") {
+          this.error = "Account is not verified";
+        } else {
+          this.error = "Account credentials are invalid";
         }
       }
     )

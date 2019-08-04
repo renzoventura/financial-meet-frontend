@@ -1,0 +1,25 @@
+<div *ngIf="application">
+        <shared-application-profile [application]="application"></shared-application-profile>
+    </div>
+<div class="wrapper">
+    <div class="row">
+
+        <div class="col-sm text-left">
+            <!-- <div class="client-field">
+                Status:
+                <div class="client-value">
+                    &nbsp;{{application?.status}}
+                </div>
+            </div> -->
+
+        </div>
+        <div class="col-sm text-right" *ngIf="!(application?.status == 'DONE')">
+
+            <button class="text-right" mat-raised-button class="progress-button"
+                (click)="progressApplication()">Progress
+                Application</button>
+
+        </div>
+    </div>
+</div>
+

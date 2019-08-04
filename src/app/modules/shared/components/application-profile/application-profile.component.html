@@ -1,0 +1,200 @@
+<div class="application-profile-page">
+  <div *ngIf="application">
+    <div class="row">
+      <div class="col-sm application-type">
+        {{ application?.type }} Application: {{ application?.subType}}
+      </div>
+      <div class="col-sm text-right">
+        <div class="assigned-agent-field">
+          Status:
+          <div class="assigned-agent-value">
+            &nbsp;{{application?.status}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="title-footer">
+      <div>Date Created: {{ application?.dateCreated }}</div>
+      <div>Application ID:{{ application?.id }}</div>
+      <hr>
+    </div>
+
+
+    <div class="client-details">
+      <div class="client-details-title">
+        Client Details
+      </div>
+      <div class="row client-details-container">
+        <div class="col-sm text-left">
+          <div class="client-field">
+            First Name:
+            <div class="client-value">
+              &nbsp;{{application?.owner.firstName}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Suburb:
+            <div class="client-value">
+              &nbsp;{{application?.owner.suburb}}
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Last name:
+            <div class="client-value">
+              &nbsp;{{application?.owner.lastName}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Email:
+            <div class="client-value">
+              &nbsp;{{application?.owner.email}}
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Contact Number:
+            <div class="client-value">
+              &nbsp;{{application?.owner.mobile}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Annual Income:
+            <div class="client-value">
+              &nbsp;{{application?.owner.annualIncome}}
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Email:
+            <div class="client-value">
+              &nbsp;{{application?.owner.email}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Current Loan:
+            <div class="client-value">
+              &nbsp;{{application?.owner.currentLoan}}
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="client-details">
+      <div class="client-details-title">
+        Client Details
+      </div>
+      <div class="row client-details-container">
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Annual Income:
+            <div class="client-value">
+              &nbsp;{{ application?.annualIncome}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Over Time Bonus:
+            <div class="client-value">
+              &nbsp;{{ application?.overtimeBonus}}
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Rent Income:
+            <div class="client-value">
+              &nbsp;{{ application?.rentalIncome}}
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Business Income:
+            <div class="client-value">
+              &nbsp;{{ application?.businessIncome}}
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Other Income:
+            <div class="client-value">
+              &nbsp;{{ application?.otherIncome}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Expected Loan:
+            <div class="client-value">
+              &nbsp;{{ application?.expectedLoan}}
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Loan:
+            <div class="client-value">
+              &nbsp;{{ application?.loan}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-left">
+          <div class="client-field">
+            Other Information
+            <div class="client-value">
+              &nbsp;{{ application?.otherInformation}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </div>
+    <hr>
+    <div class="progress-bar-title">
+      Application Progress
+    </div>
+    <div *ngIf="application" class="progress-bar-wrapper">
+      <ul class="progressbar">
+        <li [class.active]="nodeIsActive(status)" *ngFor="let status of statuses">
+          {{ status }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="!application" class="application-not-found">
+    Application does not exist
+  </div>
+</div>
