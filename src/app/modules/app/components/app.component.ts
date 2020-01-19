@@ -11,7 +11,7 @@ export class AppComponent {
 
   showSideBar = true;
   componentsWithoutSidebar = ["/login", "/register"];
-  title = 'Fynco';
+  title = 'FinancialMeet';
 
 
   ngOnInit() {

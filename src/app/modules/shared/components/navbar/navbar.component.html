@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
-    <mat-toolbar><img class="nav-logo" src="/assets/images/fynco_w_logo.png"></mat-toolbar>
+    <mat-toolbar><img class="nav-logo" src="/assets/images/financial_meet_logo.png"></mat-toolbar>
     <div *ngIf="isUserSideBar">
       <mat-nav-list class="list-container">
         <a mat-list-item routerLink="create" routerLinkActive="active">Create Application</a>
