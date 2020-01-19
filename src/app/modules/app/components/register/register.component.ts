@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(this.registerUserData).subscribe(
       res => {
         this.router.navigate(["./"])
-        alert("Account Created! Verification email is sent to your email");
+        alert("Account Created!");
       },
       err => {
         this.error = err.error.message
